@@ -17,10 +17,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private var currentViewModel: TodayViewModelType = NotDoneViewModel() {
+    private var mainViewModel = TodayViewModel() {
         didSet {
             tableView.reloadData()
         }
+    }
+    
+    private var subViewModel: TodayViewModelType  {
+        return mainViewModel.viewModelForSegmentIndex(mainViewModel.selectedIndex)
     }
     
     override func viewDidLoad() {
@@ -47,13 +51,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     @IBAction private func segmentChanged(sender: UISegmentedControl) {
-        
-        switch sender.selectedSegmentIndex {
-        case 0:
-            currentViewModel = NotDoneViewModel()
-        default:
-            currentViewModel = DoneViewModel()
-        }
+        mainViewModel.selectedIndex = sender.selectedSegmentIndex
     }
     
     @IBAction private func goToAppButtonPressed(sender: UIButton) {
@@ -69,14 +67,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 extension TodayViewController: UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentViewModel.count()
+        return subViewModel.count()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(todayCellId) as! UITableViewCell
         
-        cell.textLabel?.text = currentViewModel.titleForRow(indexPath.row)
+        cell.textLabel?.text = subViewModel.titleForRow(indexPath.row)
         cell.textLabel?.textColor = UIColor.lightTextColor()
         
         return cell
@@ -89,7 +87,7 @@ extension TodayViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        currentViewModel.toggleStatusForRow(indexPath.row)
+        subViewModel.toggleStatusForRow(indexPath.row)
         tableView.reloadData()
     }
 }
