@@ -168,8 +168,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
 			<key>path</key>
 			<string>Supporting Files</string>
 			<key>sourceTree</key>
@@ -458,8 +456,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
 			<key>path</key>
 			<string>Supporting Files</string>
 			<key>sourceTree</key>
@@ -500,193 +496,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>0400A1421B2AC11500966213</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0400A1501B2AC11500966213</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0400A1431B2AC11500966213</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0400A1471B2AC11500966213</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0400A1441B2AC11500966213</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0400A1451B2AC11500966213</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>0400A1591B2AC11600966213</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0400A1421B2AC11500966213</string>
-				<string>0400A1431B2AC11500966213</string>
-				<string>0400A1441B2AC11500966213</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>0400A1491B2AC11500966213</string>
-				<string>0400A14B1B2AC11500966213</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>TodoKitTests</string>
-			<key>productName</key>
-			<string>TodoKitTests</string>
-			<key>productReference</key>
-			<string>0400A1461B2AC11500966213</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>0400A1461B2AC11500966213</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>TodoKitTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>0400A1471B2AC11500966213</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0400A13C1B2AC11500966213</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0400A1481B2AC11500966213</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>04E1EF291B29CEB70026409C</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>0400A13B1B2AC11500966213</string>
-			<key>remoteInfo</key>
-			<string>TodoKit</string>
-		</dict>
-		<key>0400A1491B2AC11500966213</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>0400A13B1B2AC11500966213</string>
-			<key>targetProxy</key>
-			<string>0400A1481B2AC11500966213</string>
-		</dict>
-		<key>0400A14A1B2AC11500966213</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>04E1EF291B29CEB70026409C</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>04E1EF301B29CEB70026409C</string>
-			<key>remoteInfo</key>
-			<string>AppExtensionsDemo</string>
-		</dict>
-		<key>0400A14B1B2AC11500966213</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>04E1EF301B29CEB70026409C</string>
-			<key>targetProxy</key>
-			<string>0400A14A1B2AC11500966213</string>
-		</dict>
-		<key>0400A14C1B2AC11500966213</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0400A14F1B2AC11500966213</string>
-				<string>0400A14D1B2AC11500966213</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>TodoKitTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0400A14D1B2AC11500966213</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0400A14E1B2AC11500966213</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>path</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0400A14E1B2AC11500966213</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0400A14F1B2AC11500966213</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>TodoKitTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0400A1501B2AC11500966213</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0400A14F1B2AC11500966213</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>0400A1511B2AC11500966213</key>
 		<dict>
@@ -848,71 +657,6 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>0400A1591B2AC11600966213</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>0400A15A1B2AC11600966213</string>
-				<string>0400A15B1B2AC11600966213</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>0400A15A1B2AC11600966213</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>TodoKitTests/Supporting Files/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/AppExtensionsDemo.app/AppExtensionsDemo</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>0400A15B1B2AC11600966213</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>TodoKitTests/Supporting Files/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/AppExtensionsDemo.app/AppExtensionsDemo</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
 		<key>0400A15C1B2AC14F00966213</key>
 		<dict>
 			<key>fileRef</key>
@@ -936,8 +680,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Storyboards &amp; Nibs</string>
 			<key>path</key>
 			<string>Storyboards &amp; Nibs</string>
 			<key>sourceTree</key>
@@ -952,8 +694,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>View Models</string>
 			<key>path</key>
 			<string>View Models</string>
 			<key>sourceTree</key>
@@ -967,8 +707,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>View Controllers</string>
 			<key>path</key>
 			<string>View Controllers</string>
 			<key>sourceTree</key>
@@ -982,8 +720,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Storyboards &amp; Nibs</string>
 			<key>path</key>
 			<string>Storyboards &amp; Nibs</string>
 			<key>sourceTree</key>
@@ -1044,8 +780,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>TodayViewModelType.swift</string>
 			<key>path</key>
 			<string>TodayViewModelType.swift</string>
 			<key>sourceTree</key>
@@ -1059,8 +793,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>View Models</string>
 			<key>path</key>
 			<string>View Models</string>
 			<key>sourceTree</key>
@@ -1087,7 +819,6 @@
 				<string>04E1EF331B29CEB70026409C</string>
 				<string>0400A1291B2AC0E500966213</string>
 				<string>0400A13D1B2AC11500966213</string>
-				<string>0400A14C1B2AC11500966213</string>
 				<string>0400A1211B2AC0AF00966213</string>
 				<string>04E1EF321B29CEB70026409C</string>
 			</array>
@@ -1115,13 +846,6 @@
 					<dict>
 						<key>CreatedOnToolsVersion</key>
 						<string>6.3.2</string>
-					</dict>
-					<key>0400A1451B2AC11500966213</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.3.2</string>
-						<key>TestTargetID</key>
-						<string>04E1EF301B29CEB70026409C</string>
 					</dict>
 					<key>04E1EF301B29CEB70026409C</key>
 					<dict>
@@ -1160,7 +884,6 @@
 				<string>04E1EF301B29CEB70026409C</string>
 				<string>0400A1251B2AC0E500966213</string>
 				<string>0400A13B1B2AC11500966213</string>
-				<string>0400A1451B2AC11500966213</string>
 			</array>
 		</dict>
 		<key>04E1EF2C1B29CEB70026409C</key>
@@ -1272,7 +995,6 @@
 				<string>04E1EF311B29CEB70026409C</string>
 				<string>0400A1261B2AC0E500966213</string>
 				<string>0400A13C1B2AC11500966213</string>
-				<string>0400A1461B2AC11500966213</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1307,8 +1029,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
 			<key>path</key>
 			<string>Supporting Files</string>
 			<key>sourceTree</key>
@@ -1660,8 +1380,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>View Controllers</string>
 			<key>path</key>
 			<string>View Controllers</string>
 			<key>sourceTree</key>
@@ -1675,8 +1393,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>View Models</string>
 			<key>path</key>
 			<string>View Models</string>
 			<key>sourceTree</key>
@@ -1690,8 +1406,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Model</string>
 			<key>path</key>
 			<string>Model</string>
 			<key>sourceTree</key>
@@ -1705,8 +1419,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Data</string>
 			<key>path</key>
 			<string>Data</string>
 			<key>sourceTree</key>
