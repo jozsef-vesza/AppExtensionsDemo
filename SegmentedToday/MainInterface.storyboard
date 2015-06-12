@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="SegmentedToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HXB-jF-kTN">
+                                <rect key="frame" x="8" y="8" width="304" height="29"/>
+                                <segments>
+                                    <segment title="Todo"/>
+                                    <segment title="Done"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="M4Y-Lb-cyx" eventType="valueChanged" id="B3c-Og-bdK"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MlL-DZ-ONr">
+                                <rect key="frame" x="0.0" y="44" width="320" height="106"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todayCell" id="AtI-p1-BMw">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AtI-p1-BMw" id="gjg-9r-BSZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MlL-DZ-ONr" secondAttribute="trailing" id="Dez-zr-IdV"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="MlL-DZ-ONr" secondAttribute="bottom" id="HvU-bl-Wwg"/>
+                            <constraint firstItem="MlL-DZ-ONr" firstAttribute="top" secondItem="HXB-jF-kTN" secondAttribute="bottom" constant="8" id="RKT-Z6-7gd"/>
+                            <constraint firstAttribute="trailing" secondItem="HXB-jF-kTN" secondAttribute="trailing" constant="8" id="TeU-QT-Zzf"/>
+                            <constraint firstItem="MlL-DZ-ONr" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="h5e-Wc-CXr"/>
+                            <constraint firstItem="HXB-jF-kTN" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="8" id="ngK-a3-75C"/>
+                            <constraint firstItem="HXB-jF-kTN" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="zAX-fc-xsa"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="150"/>
+                    <connections>
+                        <outlet property="tableView" destination="MlL-DZ-ONr" id="PiR-IW-6bz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="285"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
