@@ -845,6 +845,7 @@
 				0400A1361B2AC0E500966213 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0400A1551B2AC11600966213 /* Build configuration list for PBXNativeTarget "TodoKit" */ = {
 			isa = XCConfigurationList;
@@ -853,6 +854,7 @@
 				0400A1571B2AC11600966213 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0400A1591B2AC11600966213 /* Build configuration list for PBXNativeTarget "TodoKitTests" */ = {
 			isa = XCConfigurationList;
@@ -861,6 +863,7 @@
 				0400A15B1B2AC11600966213 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04E1EF2C1B29CEB70026409C /* Build configuration list for PBXProject "AppExtensionsDemo" */ = {
 			isa = XCConfigurationList;

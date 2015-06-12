@@ -41,6 +41,10 @@ public class ShoppingItemStore: NSObject {
         }
     }
     
+    private func storeItemState(item: ShoppingItem) {
+        /// TODO: - save to shared store
+    }
+    
     private func loadItems() -> [ShoppingItem]? {
         return nil
     }

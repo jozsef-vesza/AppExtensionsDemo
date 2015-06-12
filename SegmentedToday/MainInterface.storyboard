@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HXB-jF-kTN">
@@ -26,8 +26,8 @@
                                     <action selector="segmentChanged:" destination="M4Y-Lb-cyx" eventType="valueChanged" id="B3c-Og-bdK"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MlL-DZ-ONr">
-                                <rect key="frame" x="0.0" y="44" width="320" height="106"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MlL-DZ-ONr">
+                                <rect key="frame" x="0.0" y="44" width="320" height="161"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todayCell" id="AtI-p1-BMw">
@@ -38,12 +38,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw8-KH-7Cp">
+                                <rect key="frame" x="125" y="212" width="70" height="30"/>
+                                <state key="normal" title="Open App">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToAppButtonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="cLP-QU-9Pg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="hw8-KH-7Cp" secondAttribute="centerX" id="0ph-jE-Uvi"/>
                             <constraint firstAttribute="trailing" secondItem="MlL-DZ-ONr" secondAttribute="trailing" id="Dez-zr-IdV"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="MlL-DZ-ONr" secondAttribute="bottom" id="HvU-bl-Wwg"/>
                             <constraint firstItem="MlL-DZ-ONr" firstAttribute="top" secondItem="HXB-jF-kTN" secondAttribute="bottom" constant="8" id="RKT-Z6-7gd"/>
                             <constraint firstAttribute="trailing" secondItem="HXB-jF-kTN" secondAttribute="trailing" constant="8" id="TeU-QT-Zzf"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="hw8-KH-7Cp" secondAttribute="bottom" constant="8" id="Tgf-3F-G4z"/>
+                            <constraint firstItem="hw8-KH-7Cp" firstAttribute="top" secondItem="MlL-DZ-ONr" secondAttribute="bottom" constant="7" id="eFP-WD-A4F"/>
                             <constraint firstItem="MlL-DZ-ONr" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="h5e-Wc-CXr"/>
                             <constraint firstItem="HXB-jF-kTN" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="8" id="ngK-a3-75C"/>
                             <constraint firstItem="HXB-jF-kTN" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="zAX-fc-xsa"/>
@@ -54,7 +65,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="150"/>
+                    <size key="freeformSize" width="320" height="250"/>
                     <connections>
                         <outlet property="tableView" destination="MlL-DZ-ONr" id="PiR-IW-6bz"/>
                     </connections>

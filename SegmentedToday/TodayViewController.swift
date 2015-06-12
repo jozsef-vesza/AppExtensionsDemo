@@ -27,7 +27,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        preferredContentSize = CGSize(width: preferredContentSize.width, height: CGFloat(currentViewModel.count()) * rowHeight)
+    }
+    
+    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return UIEdgeInsetsZero
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
@@ -41,11 +44,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     @IBAction private func segmentChanged(sender: UISegmentedControl) {
+        
         switch sender.selectedSegmentIndex {
         case 0:
             currentViewModel = NotDoneViewModel()
         default:
             currentViewModel = DoneViewModel()
+        }
+    }
+    
+    @IBAction private func goToAppButtonPressed(sender: UIButton) {
+        
+        if let appUrl = NSURL(string: "appExtensionsDemo://") {
+            extensionContext?.openURL(appUrl, completionHandler: nil)
         }
     }
 }
@@ -59,6 +70,7 @@ extension TodayViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(todayCellId) as! UITableViewCell
         
         cell.textLabel?.text = currentViewModel.titleForRow(indexPath.row)
@@ -73,6 +85,7 @@ extension TodayViewController: UITableViewDataSource {
 extension TodayViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         currentViewModel.toggleStatusForRow(indexPath.row)
         tableView.reloadData()
     }
