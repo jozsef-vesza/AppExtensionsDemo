@@ -29,8 +29,16 @@ public class ShoppingItemStore: NSObject {
         }
     }
     
-    public func toggleAtIndex(index: Int) {
-        items[index].toggle()
+    public func toggle(item: ShoppingItem) {
+        
+        items = items.map { original -> ShoppingItem in
+            
+            if original.name == item.name {
+                return ShoppingItem(name: original.name, status: !original.status)
+            }
+            
+            return original
+        }
     }
     
     private func loadItems() -> [ShoppingItem]? {

@@ -32,6 +32,6 @@ struct DoneViewModel: TodayViewModelType {
     }
     
     func toggleStatusForRow(row: Int) {
-        store.toggleAtIndex(row)
+        store.toggle(items[row])
     }
 }

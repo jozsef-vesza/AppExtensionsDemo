@@ -10,14 +10,10 @@ import UIKit
 
 public struct ShoppingItem {
     public let name: String
-    public var status: Bool
+    public let status: Bool
     
     public init(name: String, status: Bool = false) {
         self.name = name
         self.status = status
-    }
-    
-    public mutating func toggle() {
-        status = !status
     }
 }

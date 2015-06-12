@@ -30,6 +30,6 @@ struct TodoViewModel: TodayViewModelType {
     }
     
     func toggleStatusForRow(row: Int) {
-        store.toggleAtIndex(row)
+        store.toggle(store.items[row])
     }
 }
