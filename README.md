@@ -1,10 +1,10 @@
 # AppExtensionsDemo
 
-## Introduction
+## Introduction 👋
 
 This is an example project for getting familiary with App Extensions, introduced in iOS 8.
 
-## Checklist
+## Checklist 👷
 
 - [x] Basic app with Today widget working
 - [x] Can open host application
@@ -14,7 +14,7 @@ This is an example project for getting familiary with App Extensions, introduced
 - [ ] Experimenting with multiple Today widgets
 - [ ] Adding different data stores
 
-## Discussion
+## Discussion 👓
 
 ### Project setup 🚧
 
@@ -154,13 +154,13 @@ override func viewWillAppear(animated: Bool) {
 }
 ```
 
-### Conclusion
+### Conclusion 😌
 
 Extensions are definitely a welcome improvement. Although dealing with them is not necessarily difficult, but there are definitely some tricky parts. 
 
 I am really hoping for improved data sharing (perhaps some IPC hooks). In the meantime, you can use third party tools, such as [MMWormhole](https://github.com/mutualmobile/MMWormhole) to ease the process. 😉
 
-### Resources
+### Resources 🎁
 
 * [App extension programming guide](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/)
 * [Sharing data between iOS apps and app extensions](http://www.atomicbird.com/blog/sharing-with-app-extensions)
