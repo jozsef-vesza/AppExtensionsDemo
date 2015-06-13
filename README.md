@@ -1,5 +1,7 @@
 # AppExtensionsDemo
 
+![](http://i.imgur.com/gjVisNP.gif)
+
 ## Introduction 👋
 
 This is an example project for getting familiary with App Extensions, introduced in iOS 8.
