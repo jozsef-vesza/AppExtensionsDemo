@@ -30,6 +30,7 @@
 		BBBEA6091B2C610B007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
 		BBBEA60A1B2C6110007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
 		BBBEA60C1B2C73A4007444FF /* ShoppingItemStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEA60B1B2C73A4007444FF /* ShoppingItemStoreType.swift */; };
+		BBBEA60E1B2C889B007444FF /* TodoKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0400A13C1B2AC11500966213 /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BBBEA60D1B2C888A007444FF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BBBEA60E1B2C889B007444FF /* TodoKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +110,8 @@
 		04E1EF9B1B29E3E80026409C /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelExtensions.framework; path = Carthage/Build/iOS/ViewModelExtensions.framework; sourceTree = "<group>"; };
 		BBBEA60B1B2C73A4007444FF /* ShoppingItemStoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItemStoreType.swift; sourceTree = "<group>"; };
+		BBBEA60F1B2C89EC007444FF /* AppExtensionsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppExtensionsDemo.entitlements; sourceTree = "<group>"; };
+		BBBEA6101B2C8A02007444FF /* SegmentedToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SegmentedToday.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +156,7 @@
 		0400A1291B2AC0E500966213 /* SegmentedToday */ = {
 			isa = PBXGroup;
 			children = (
+				BBBEA6101B2C8A02007444FF /* SegmentedToday.entitlements */,
 				0400A15F1B2AC1FA00966213 /* View Models */,
 				0400A1601B2AC1FE00966213 /* View Controllers */,
 				0400A1611B2AC20200966213 /* Storyboards & Nibs */,
@@ -246,6 +260,7 @@
 		04E1EF331B29CEB70026409C /* AppExtensionsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BBBEA60F1B2C89EC007444FF /* AppExtensionsDemo.entitlements */,
 				04E1EF591B29CF1A0026409C /* View Models */,
 				04E1EF581B29CF150026409C /* View Controllers */,
 				0400A15E1B2AC1D400966213 /* Storyboards & Nibs */,
@@ -318,6 +333,7 @@
 				0400A1221B2AC0E500966213 /* Sources */,
 				0400A1231B2AC0E500966213 /* Frameworks */,
 				0400A1241B2AC0E500966213 /* Resources */,
+				BBBEA60D1B2C888A007444FF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -379,12 +395,24 @@
 				TargetAttributes = {
 					0400A1251B2AC0E500966213 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 22E8VLPFF8;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0400A13B1B2AC11500966213 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
 					04E1EF301B29CEB70026409C = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 22E8VLPFF8;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -526,6 +554,9 @@
 		0400A1351B2AC0E500966213 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SegmentedToday/SegmentedToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jozvesza/Projects/Misc/ViewModelExtensions/Carthage/Build/iOS,
@@ -538,6 +569,7 @@
 				INFOPLIST_FILE = "SegmentedToday/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -545,6 +577,9 @@
 		0400A1361B2AC0E500966213 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SegmentedToday/SegmentedToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jozvesza/Projects/Misc/ViewModelExtensions/Carthage/Build/iOS,
@@ -553,6 +588,7 @@
 				INFOPLIST_FILE = "SegmentedToday/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -694,6 +730,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppExtensionsDemo/AppExtensionsDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -702,6 +741,7 @@
 				INFOPLIST_FILE = "AppExtensionsDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -709,6 +749,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppExtensionsDemo/AppExtensionsDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -717,6 +760,7 @@
 				INFOPLIST_FILE = "AppExtensionsDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

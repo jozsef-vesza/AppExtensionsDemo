@@ -8,6 +8,9 @@
 
 import UIKit
 
+private let appGroupId = "group.hu.jozsefvesza.appextensionsdemo"
+private let savedDataKey = "savedItems"
+
 public class ShoppingItemStore: ItemStoreType {
     
     public static let sharedInstance = ShoppingItemStore()
@@ -21,6 +24,8 @@ public class ShoppingItemStore: ItemStoreType {
         ShoppingItem(name: "Coffee"),
         ShoppingItem(name: "Banana"),
     ]
+    
+    private let defaults = NSUserDefaults(suiteName: appGroupId)
     
     public init() {
         if let savedItems = loadItems() {
@@ -43,10 +48,27 @@ public class ShoppingItemStore: ItemStoreType {
 extension ShoppingItemStore: ItemPersisterType {
     
     internal func storeItemState(items: [ShoppingItem]) {
-        /// TODO: - save to shared store
+        
+        let boxedItems = items.map { item -> [String : Bool] in
+            return [item.name : item.status]
+        }
+        
+        defaults?.setValue(boxedItems, forKey: savedDataKey)
+        defaults?.synchronize()
     }
     
     internal func loadItems() -> [ShoppingItem]? {
+        
+        if let loaded = defaults?.valueForKey(savedDataKey) as? [[String : Bool]] {
+
+            let unboxed = loaded.map { dict -> ShoppingItem in
+                
+                return ShoppingItem(name: dict.keys.first!, status: dict.values.first!)
+            }
+            
+            return unboxed
+        }
+        
         return nil
     }
 }
