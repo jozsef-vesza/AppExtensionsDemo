@@ -3,11 +3,10 @@ Example project for App Extensions in iOS 8
 
 Current status:
 
-* Basic app with Today widget working
-* Can open host application
-
-Plans:
-
-* Setting up shared container
-* Snapshotting and updates
-* Experimenting with multiple Today widgets
+- [x] Basic app with Today widget working
+- [x] Can open host application
+- [x] Setting up shared container
+- [x] Two-way data updates
+- [ ] Snapshotting
+- [ ] Experimenting with multiple Today widgets
+- [ ] Adding different data stores
