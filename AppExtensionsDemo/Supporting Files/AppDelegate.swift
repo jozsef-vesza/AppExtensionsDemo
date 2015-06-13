@@ -8,6 +8,8 @@
 
 import UIKit
 
+let updateDataNotification = "updateData"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -25,4 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func applicationDidBecomeActive(application: UIApplication) {
+        NSNotificationCenter.defaultCenter().postNotificationName(updateDataNotification, object: nil)
+    }
 }

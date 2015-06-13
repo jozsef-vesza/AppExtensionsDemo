@@ -25,6 +25,19 @@ class TodoViewController: UITableViewController {
         tableView.estimatedRowHeight = defaultRowHeight
         tableView.tableFooterView = UIView(frame: CGRectZero)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(updateDataNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (_) -> Void in
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 
     // MARK: - Table view data source
 

@@ -27,11 +27,12 @@ public struct ShoppingItemStore: ShoppingStoreType {
     public init() {}
     
     public func items() -> [ShoppingItem] {
+        
         if let loaded = loadItems() {
             return loaded
-        } else {
-            return defaultItems
         }
+        
+        return defaultItems
     }
     
     public func toggleItem(item: ShoppingItem) {
