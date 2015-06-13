@@ -11,25 +11,25 @@ import TodoKit
 
 struct TodoViewModel: TodoViewModelType {
     
-    let store: ShoppingItemStore
+    let store: ShoppingStoreType
     
-    init(store: ShoppingItemStore = ShoppingItemStore.sharedInstance) {
+    init(store: ShoppingStoreType = ShoppingItemStore()) {
         self.store = store
     }
     
     func count() -> Int {
-        return store.items.count
+        return store.items().count
     }
     
     func titleForRow(row: Int) -> String {
-        return store.items[row].name
+        return store.items()[row].name
     }
     
     func statusForRow(row: Int) -> Bool {
-        return store.items[row].status
+        return store.items()[row].status
     }
     
     func toggleStatusForRow(row: Int) {
-        store.toggle(store.items[row])
+        store.toggleItem(store.items()[row])
     }
 }

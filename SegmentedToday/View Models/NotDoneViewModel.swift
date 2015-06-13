@@ -10,12 +10,13 @@ import UIKit
 import TodoKit
 
 struct NotDoneViewModel: TodoViewModelType {
-    let store: ShoppingItemStore
+    let store: ShoppingStoreType
+    
     var items: [ShoppingItem] {
-        return store.items.filter { $0.status == false }
+        return store.items().filter { $0.status == false }
     }
     
-    init(store: ShoppingItemStore = ShoppingItemStore.sharedInstance) {
+    init(store: ShoppingStoreType = ShoppingItemStore()) {
         self.store = store
     }
     
@@ -32,6 +33,6 @@ struct NotDoneViewModel: TodoViewModelType {
     }
     
     func toggleStatusForRow(row: Int) {
-        store.toggle(items[row])
+        store.toggleItem(items[row])
     }
 }

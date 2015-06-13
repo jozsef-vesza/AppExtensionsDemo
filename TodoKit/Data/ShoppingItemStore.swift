@@ -11,14 +11,11 @@ import UIKit
 private let appGroupId = "group.hu.jozsefvesza.appextensionsdemo"
 private let savedDataKey = "savedItems"
 
-public class ShoppingItemStore: ItemStoreType {
-    
-    public static let sharedInstance = ShoppingItemStore()
-    public private(set) var items = [ShoppingItem]() {
-        didSet {
-            storeItemState(items)
-        }
-    }
+public enum StoreTypes {
+    case UserDefaults
+}
+
+public struct ShoppingItemStore: ShoppingStoreType {
     
     private let defaultItems = [
         ShoppingItem(name: "Coffee"),
@@ -27,27 +24,29 @@ public class ShoppingItemStore: ItemStoreType {
     
     private let defaults = NSUserDefaults(suiteName: appGroupId)
     
-    public init() {
-        if let savedItems = loadItems() {
-            items = savedItems
+    public init() {}
+    
+    public func items() -> [ShoppingItem] {
+        if let loaded = loadItems() {
+            return loaded
         } else {
-            items = defaultItems
+            return defaultItems
         }
     }
     
-    public func toggle(item: ShoppingItem) {
+    public func toggleItem(item: ShoppingItem) {
         
-        items = items.map { original -> ShoppingItem in
-            
+        let initial = items()
+        
+        let updated = initial.map { original -> ShoppingItem in
             return original == item ?
                 ShoppingItem(name: original.name, status: !original.status) : original
         }
+        
+        saveItems(updated)
     }
-}
-
-extension ShoppingItemStore: ItemPersisterType {
     
-    internal func storeItemState(items: [ShoppingItem]) {
+    private func saveItems(items: [ShoppingItem]) {
         
         let boxedItems = items.map { item -> [String : Bool] in
             return [item.name : item.status]
@@ -57,10 +56,10 @@ extension ShoppingItemStore: ItemPersisterType {
         defaults?.synchronize()
     }
     
-    internal func loadItems() -> [ShoppingItem]? {
+    private func loadItems() -> [ShoppingItem]? {
         
         if let loaded = defaults?.valueForKey(savedDataKey) as? [[String : Bool]] {
-
+            
             let unboxed = loaded.map { dict -> ShoppingItem in
                 
                 return ShoppingItem(name: dict.keys.first!, status: dict.values.first!)

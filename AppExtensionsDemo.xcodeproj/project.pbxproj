@@ -29,8 +29,8 @@
 		BBBEA6081B2C6101007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
 		BBBEA6091B2C610B007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
 		BBBEA60A1B2C6110007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
-		BBBEA60C1B2C73A4007444FF /* ShoppingItemStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEA60B1B2C73A4007444FF /* ShoppingItemStoreType.swift */; };
 		BBBEA60E1B2C889B007444FF /* TodoKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0400A13C1B2AC11500966213 /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBCBA3181B2CA83C00744D10 /* ShoppingStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCBA3171B2CA83C00744D10 /* ShoppingStoreType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,9 +109,9 @@
 		04E1EF991B29E0520026409C /* TodoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		04E1EF9B1B29E3E80026409C /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelExtensions.framework; path = Carthage/Build/iOS/ViewModelExtensions.framework; sourceTree = "<group>"; };
-		BBBEA60B1B2C73A4007444FF /* ShoppingItemStoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItemStoreType.swift; sourceTree = "<group>"; };
 		BBBEA60F1B2C89EC007444FF /* AppExtensionsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppExtensionsDemo.entitlements; sourceTree = "<group>"; };
 		BBBEA6101B2C8A02007444FF /* SegmentedToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SegmentedToday.entitlements; sourceTree = "<group>"; };
+		BBCBA3171B2CA83C00744D10 /* ShoppingStoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingStoreType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,7 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				04E1EF971B29DF4F0026409C /* ShoppingItemStore.swift */,
-				BBBEA60B1B2C73A4007444FF /* ShoppingItemStoreType.swift */,
+				BBCBA3171B2CA83C00744D10 /* ShoppingStoreType.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -497,8 +497,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBBEA60C1B2C73A4007444FF /* ShoppingItemStoreType.swift in Sources */,
 				0400A16B1B2ACBBC00966213 /* TodayViewModelType.swift in Sources */,
+				BBCBA3181B2CA83C00744D10 /* ShoppingStoreType.swift in Sources */,
 				0400A15D1B2AC15300966213 /* ShoppingItemStore.swift in Sources */,
 				0400A15C1B2AC14F00966213 /* ShoppingItem.swift in Sources */,
 			);
