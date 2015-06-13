@@ -16,6 +16,7 @@ let rowHeight: CGFloat = 44
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
     
     private var mainViewModel = TodayViewModel() {
         didSet {
@@ -23,8 +24,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
-    private var subViewModel: TodayViewModelType  {
-        return mainViewModel.viewModelForSegmentIndex(mainViewModel.selectedIndex)
+    private var subViewModel: TodoViewModelType  {
+        return mainViewModel.viewModelForSegmentIndex(selectedIndex)
+    }
+    
+    private var selectedIndex: Int {
+        return mainViewModel.selectedIndex
     }
     
     override func viewDidLoad() {
@@ -34,6 +39,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = rowHeight
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        segmentedControl.selectedSegmentIndex = mainViewModel.selectedIndex
     }
     
     func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {

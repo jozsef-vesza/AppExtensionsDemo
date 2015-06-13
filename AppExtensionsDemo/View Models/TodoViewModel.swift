@@ -9,7 +9,7 @@
 import UIKit
 import TodoKit
 
-struct TodoViewModel: TodayViewModelType {
+struct TodoViewModel: TodoViewModelType {
     
     let store: ShoppingItemStore
     

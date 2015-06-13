@@ -9,7 +9,7 @@
 import UIKit
 import ViewModelExtensions
 
-public protocol TodayViewModelType: ViewModelType {
+public protocol TodoViewModelType: ViewModelType {
     
     func count() -> Int
     

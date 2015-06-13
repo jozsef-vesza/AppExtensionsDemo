@@ -8,20 +8,21 @@
 
 import UIKit
 
-public class ShoppingItemStore: NSObject {
+public class ShoppingItemStore: ItemStoreType {
     
     public static let sharedInstance = ShoppingItemStore()
-    public private(set) var items: [ShoppingItem]
+    public private(set) var items = [ShoppingItem]() {
+        didSet {
+            storeItemState(items)
+        }
+    }
     
     private let defaultItems = [
         ShoppingItem(name: "Coffee"),
         ShoppingItem(name: "Banana"),
     ]
     
-    public override init() {
-        items = [ShoppingItem]()
-        super.init()
-        
+    public init() {
         if let savedItems = loadItems() {
             items = savedItems
         } else {
@@ -33,19 +34,19 @@ public class ShoppingItemStore: NSObject {
         
         items = items.map { original -> ShoppingItem in
             
-            if original.name == item.name {
-                return ShoppingItem(name: original.name, status: !original.status)
-            }
-            
-            return original
+            return original == item ?
+                ShoppingItem(name: original.name, status: !original.status) : original
         }
     }
+}
+
+extension ShoppingItemStore: ItemPersisterType {
     
-    private func storeItemState(item: ShoppingItem) {
+    internal func storeItemState(items: [ShoppingItem]) {
         /// TODO: - save to shared store
     }
     
-    private func loadItems() -> [ShoppingItem]? {
+    internal func loadItems() -> [ShoppingItem]? {
         return nil
     }
 }

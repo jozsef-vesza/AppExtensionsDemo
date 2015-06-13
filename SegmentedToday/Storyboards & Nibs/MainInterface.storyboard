@@ -70,6 +70,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="250"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="HXB-jF-kTN" id="G7K-WE-Fyq"/>
                         <outlet property="tableView" destination="MlL-DZ-ONr" id="PiR-IW-6bz"/>
                     </connections>
                 </viewController>

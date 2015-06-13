@@ -10,24 +10,24 @@ import UIKit
 import TodoKit
 import ViewModelExtensions
 
+let selectedIndexKey = "selectedIndex"
+
 struct TodayViewModel: ViewModelType {
     
-    var selectedIndex: Int {
+    var selectedIndex: Int = 0 {
         didSet {
-            /// TODO: Implement save
+            NSUserDefaults.standardUserDefaults().setInteger(selectedIndex, forKey: selectedIndexKey)
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
     
     init() {
-        
-        selectedIndex = 0
-        
         if let savedIndex = loadSegmentIndex() {
             selectedIndex = savedIndex
         }
     }
     
-    func viewModelForSegmentIndex(index: Int) -> TodayViewModelType {
+    func viewModelForSegmentIndex(index: Int) -> TodoViewModelType {
         switch index {
         case 0:
             return NotDoneViewModel()
@@ -37,7 +37,11 @@ struct TodayViewModel: ViewModelType {
     }
     
     private func loadSegmentIndex() -> Int? {
-        /// TODO: Implement load
+        
+        if let loadedIndex = NSUserDefaults.standardUserDefaults().objectForKey(selectedIndexKey) as? Int {
+            return loadedIndex
+        }
+        
         return nil
     }
 }

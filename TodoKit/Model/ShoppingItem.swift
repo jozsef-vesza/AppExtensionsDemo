@@ -9,6 +9,7 @@
 import UIKit
 
 public struct ShoppingItem {
+    
     public let name: String
     public let status: Bool
     
@@ -16,4 +17,10 @@ public struct ShoppingItem {
         self.name = name
         self.status = status
     }
+}
+
+extension ShoppingItem: Equatable {}
+
+public func ==(lhs: ShoppingItem, rhs: ShoppingItem) -> Bool {
+    return lhs.name == rhs.name
 }

@@ -9,7 +9,7 @@
 import UIKit
 import TodoKit
 
-struct NotDoneViewModel: TodayViewModelType {
+struct NotDoneViewModel: TodoViewModelType {
     let store: ShoppingItemStore
     var items: [ShoppingItem] {
         return store.items.filter { $0.status == false }

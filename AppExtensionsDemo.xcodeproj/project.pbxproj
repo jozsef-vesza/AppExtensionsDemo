@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0400A11F1B2ABA4C00966213 /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0400A11E1B2ABA4C00966213 /* ViewModelExtensions.framework */; };
 		0400A1281B2AC0E500966213 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0400A1271B2AC0E500966213 /* NotificationCenter.framework */; };
 		0400A12D1B2AC0E500966213 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400A12C1B2AC0E500966213 /* TodayViewController.swift */; };
 		0400A12F1B2AC0E500966213 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0400A12E1B2AC0E500966213 /* MainInterface.storyboard */; };
@@ -18,10 +17,8 @@
 		0400A15C1B2AC14F00966213 /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1EF951B29DEC70026409C /* ShoppingItem.swift */; };
 		0400A15D1B2AC15300966213 /* ShoppingItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1EF971B29DF4F0026409C /* ShoppingItemStore.swift */; };
 		0400A1631B2AC23600966213 /* NotDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400A1621B2AC23600966213 /* NotDoneViewModel.swift */; };
-		0400A1651B2AC28300966213 /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0400A11E1B2ABA4C00966213 /* ViewModelExtensions.framework */; };
 		0400A1671B2AC38B00966213 /* DoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400A1661B2AC38B00966213 /* DoneViewModel.swift */; };
 		0400A16B1B2ACBBC00966213 /* TodayViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400A1681B2AC8BD00966213 /* TodayViewModelType.swift */; };
-		0400A16C1B2ACBDE00966213 /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0400A11E1B2ABA4C00966213 /* ViewModelExtensions.framework */; };
 		044CA2091B2B1A840024CE31 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CA2081B2B1A840024CE31 /* TodayViewModel.swift */; };
 		04E1EF371B29CEB70026409C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1EF361B29CEB70026409C /* AppDelegate.swift */; };
 		04E1EF3E1B29CEB70026409C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E1EF3C1B29CEB70026409C /* Main.storyboard */; };
@@ -29,6 +26,10 @@
 		04E1EF431B29CEB70026409C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E1EF411B29CEB70026409C /* LaunchScreen.xib */; };
 		04E1EF9A1B29E0520026409C /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1EF991B29E0520026409C /* TodoViewModel.swift */; };
 		04E1EF9C1B29E3E80026409C /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1EF9B1B29E3E80026409C /* TodoViewController.swift */; };
+		BBBEA6081B2C6101007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
+		BBBEA6091B2C610B007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
+		BBBEA60A1B2C6110007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
+		BBBEA60C1B2C73A4007444FF /* ShoppingItemStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEA60B1B2C73A4007444FF /* ShoppingItemStoreType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +75,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0400A11E1B2ABA4C00966213 /* ViewModelExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelExtensions.framework; path = ../ViewModelExtensions/Carthage/Build/iOS/ViewModelExtensions.framework; sourceTree = "<group>"; };
 		0400A1261B2AC0E500966213 /* SegmentedToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SegmentedToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0400A1271B2AC0E500966213 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		0400A12B1B2AC0E500966213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +97,8 @@
 		04E1EF971B29DF4F0026409C /* ShoppingItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItemStore.swift; sourceTree = "<group>"; };
 		04E1EF991B29E0520026409C /* TodoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		04E1EF9B1B29E3E80026409C /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelExtensions.framework; path = Carthage/Build/iOS/ViewModelExtensions.framework; sourceTree = "<group>"; };
+		BBBEA60B1B2C73A4007444FF /* ShoppingItemStoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItemStoreType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0400A1281B2AC0E500966213 /* NotificationCenter.framework in Frameworks */,
-				0400A1651B2AC28300966213 /* ViewModelExtensions.framework in Frameworks */,
+				BBBEA6091B2C610B007444FF /* ViewModelExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0400A16C1B2ACBDE00966213 /* ViewModelExtensions.framework in Frameworks */,
+				BBBEA60A1B2C6110007444FF /* ViewModelExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0400A11F1B2ABA4C00966213 /* ViewModelExtensions.framework in Frameworks */,
 				0400A1531B2AC11500966213 /* TodoKit.framework in Frameworks */,
+				BBBEA6081B2C6101007444FF /* ViewModelExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +134,7 @@
 		0400A1211B2AC0AF00966213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0400A11E1B2ABA4C00966213 /* ViewModelExtensions.framework */,
+				BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */,
 				0400A1271B2AC0E500966213 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -141,9 +143,9 @@
 		0400A1291B2AC0E500966213 /* SegmentedToday */ = {
 			isa = PBXGroup;
 			children = (
-				0400A1611B2AC20200966213 /* Storyboards & Nibs */,
-				0400A1601B2AC1FE00966213 /* View Controllers */,
 				0400A15F1B2AC1FA00966213 /* View Models */,
+				0400A1601B2AC1FE00966213 /* View Controllers */,
+				0400A1611B2AC20200966213 /* Storyboards & Nibs */,
 				0400A12A1B2AC0E500966213 /* Supporting Files */,
 			);
 			path = SegmentedToday;
@@ -244,9 +246,9 @@
 		04E1EF331B29CEB70026409C /* AppExtensionsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0400A15E1B2AC1D400966213 /* Storyboards & Nibs */,
 				04E1EF591B29CF1A0026409C /* View Models */,
 				04E1EF581B29CF150026409C /* View Controllers */,
+				0400A15E1B2AC1D400966213 /* Storyboards & Nibs */,
 				04E1EF341B29CEB70026409C /* Supporting Files */,
 			);
 			path = AppExtensionsDemo;
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				04E1EF971B29DF4F0026409C /* ShoppingItemStore.swift */,
+				BBBEA60B1B2C73A4007444FF /* ShoppingItemStoreType.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBBEA60C1B2C73A4007444FF /* ShoppingItemStoreType.swift in Sources */,
 				0400A16B1B2ACBBC00966213 /* TodayViewModelType.swift in Sources */,
 				0400A15D1B2AC15300966213 /* ShoppingItemStore.swift in Sources */,
 				0400A15C1B2AC14F00966213 /* ShoppingItem.swift in Sources */,
@@ -525,6 +529,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jozvesza/Projects/Misc/ViewModelExtensions/Carthage/Build/iOS,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -543,6 +548,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jozvesza/Projects/Misc/ViewModelExtensions/Carthage/Build/iOS,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "SegmentedToday/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -562,6 +568,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jozvesza/Projects/Misc/ViewModelExtensions/Carthage/Build/iOS,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -588,6 +595,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jozvesza/Projects/Misc/ViewModelExtensions/Carthage/Build/iOS,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "TodoKit/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
