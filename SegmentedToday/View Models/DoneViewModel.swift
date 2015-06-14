@@ -10,6 +10,7 @@ import UIKit
 import TodoKit
 
 struct DoneViewModel: TodoViewModelType {
+    
     let store: ShoppingStoreType
     
     var items: [ShoppingItem] {

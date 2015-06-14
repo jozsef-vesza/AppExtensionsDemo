@@ -13,7 +13,7 @@ import TodoKit
 let todayCellId = "todayCell"
 let rowHeight: CGFloat = 44
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class TodayViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
@@ -32,6 +32,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         return mainViewModel.selectedIndex
     }
     
+    // MARK: - View lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,19 +47,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         segmentedControl.selectedSegmentIndex = mainViewModel.selectedIndex
     }
     
-    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
-        return UIEdgeInsetsZero
-    }
-    
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        // Perform any setup necessary in order to update the view.
-
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-
-        completionHandler(NCUpdateResult.NewData)
-    }
+    // MARK: - User interaction
     
     @IBAction private func segmentChanged(sender: UISegmentedControl) {
         mainViewModel.selectedIndex = sender.selectedSegmentIndex
@@ -71,7 +61,26 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
 }
 
-/// MARK: - Table view data source
+// MARK: - NCWidgetProviding
+
+extension TodayViewController: NCWidgetProviding {
+    
+    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return UIEdgeInsetsZero
+    }
+    
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+        // Perform any setup necessary in order to update the view.
+        
+        // If an error is encountered, use NCUpdateResult.Failed
+        // If there's no update required, use NCUpdateResult.NoData
+        // If there's an update, use NCUpdateResult.NewData
+        
+        completionHandler(NCUpdateResult.NewData)
+    }
+}
+
+// MARK: - Table view data source
 
 extension TodayViewController: UITableViewDataSource {
 
@@ -90,7 +99,7 @@ extension TodayViewController: UITableViewDataSource {
     }
 }
 
-/// MARK: - Table view delegate
+// MARK: - Table view delegate
 
 extension TodayViewController: UITableViewDelegate {
 

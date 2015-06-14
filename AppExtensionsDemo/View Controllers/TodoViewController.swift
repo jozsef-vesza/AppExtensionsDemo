@@ -15,7 +15,9 @@ let defaultRowHeight: CGFloat = 44
 
 class TodoViewController: UITableViewController {
     
-    var viewModel: TodoViewModel!
+    private(set) var viewModel: TodoViewModel!
+    
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
