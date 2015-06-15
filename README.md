@@ -6,7 +6,7 @@
 
 This is an example project for getting familiary with App Extensions, introduced in iOS 8.
 
-Please note that the project uses third party dependencies. In order to compile, you must first build them. Doing this is very simple using [Carthage](https://github.com/Carthage/Carthage):
+Please note that the project is using external dependencies, managed by [Carthage](https://github.com/Carthage/Carthage). In order to complile, you'll have to build them:
 
 ````bash
 carthage update
