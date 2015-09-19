@@ -35,11 +35,6 @@ class TodoViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
 
     // MARK: - Table view data source
 
@@ -49,7 +44,7 @@ class TodoViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(todoReuseId) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(todoReuseId, forIndexPath: indexPath)
         
         cell.textLabel?.text = viewModel.titleForRow(indexPath.row)
         cell.accessoryType = viewModel.statusForRow(indexPath.row) ? .Checkmark : .None

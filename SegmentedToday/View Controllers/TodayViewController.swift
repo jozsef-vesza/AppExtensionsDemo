@@ -69,13 +69,7 @@ extension TodayViewController: NCWidgetProviding {
         return UIEdgeInsetsZero
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         completionHandler(NCUpdateResult.NewData)
     }
 }
@@ -90,7 +84,7 @@ extension TodayViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(todayCellId) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(todayCellId, forIndexPath: indexPath)
         
         cell.textLabel?.text = subViewModel.titleForRow(indexPath.row)
         cell.textLabel?.textColor = UIColor.lightTextColor()
