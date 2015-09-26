@@ -12,21 +12,27 @@ let updateDataNotification = "updateData"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        if
-            let mainViewController = TodoViewController.instanceWithViewModel(TodoViewModel()),
-            let window = self.window {
-                window.rootViewController = mainViewController
-                window.makeKeyAndVisible()
+    
+    lazy var navigationController: UINavigationController? = {
+        return self.window?.rootViewController as? UINavigationController
+        }()
+    
+    lazy var mainViewController: TodoViewController? = {
+        return TodoViewController.instanceWithViewModel(TodoViewModel())
+        }()
+    
+    func applicationDidFinishLaunching(application: UIApplication) {
+        
+        guard let mainViewController = mainViewController,
+            navigationController = navigationController else {
+                return
         }
         
-        return true
+        navigationController.viewControllers = [mainViewController]
     }
-
+    
     func applicationDidBecomeActive(application: UIApplication) {
         NSNotificationCenter.defaultCenter().postNotificationName(updateDataNotification, object: nil)
     }

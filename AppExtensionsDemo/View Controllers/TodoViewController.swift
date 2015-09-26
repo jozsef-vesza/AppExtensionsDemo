@@ -10,7 +10,6 @@ import UIKit
 import ViewModelExtensions
 
 let todoReuseId = "todoCell"
-let statusbarHeight: CGFloat = 20
 let defaultRowHeight: CGFloat = 44
 
 class TodoViewController: UITableViewController {
@@ -22,7 +21,6 @@ class TodoViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.contentInset.top = statusbarHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = defaultRowHeight
         tableView.tableFooterView = UIView(frame: CGRectZero)
@@ -44,10 +42,9 @@ class TodoViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(todoReuseId, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(todoReuseId, forIndexPath: indexPath) as! TodoCell
+        cell.todoItem = viewModel.dataForFor(indexPath.row)
         
-        cell.textLabel?.text = viewModel.titleForRow(indexPath.row)
-        cell.accessoryType = viewModel.statusForRow(indexPath.row) ? .Checkmark : .None
         return cell
     }
     

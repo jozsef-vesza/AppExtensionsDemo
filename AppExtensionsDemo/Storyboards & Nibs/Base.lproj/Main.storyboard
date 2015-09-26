@@ -1,26 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gA6-89-Iq9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Clh-ze-31H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Todo View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="ts7-2X-O0a">
+            <objects>
+                <navigationController id="Clh-ze-31H" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pvM-NC-bzX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4w-Fg-agX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-549" y="340"/>
+        </scene>
+        <!--Items-->
         <scene sceneID="n9t-c8-YCa">
             <objects>
-                <tableViewController storyboardIdentifier="TodoViewController" id="gA6-89-Iq9" customClass="TodoViewController" customModule="AppExtensionsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TodoViewController" title="Items" id="gA6-89-Iq9" customClass="TodoViewController" customModule="AppExtensionsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9ug-ZF-6Aj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="todoCell" id="Ka5-HW-n0P">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="todoCell" id="Ka5-HW-n0P" customClass="TodoCell" customModule="AppExtensionsDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ka5-HW-n0P" id="WNt-dX-b7a">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6O-Za-QSJ">
+                                            <rect key="frame" x="20" y="11.5" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="h6O-Za-QSJ" firstAttribute="centerY" secondItem="WNt-dX-b7a" secondAttribute="centerY" id="7HZ-Oi-Gej"/>
+                                        <constraint firstItem="h6O-Za-QSJ" firstAttribute="leading" secondItem="WNt-dX-b7a" secondAttribute="leading" constant="20" id="JCI-jU-hmc"/>
+                                        <constraint firstAttribute="bottom" secondItem="h6O-Za-QSJ" secondAttribute="bottom" priority="999" constant="11.5" id="N5l-6a-SWa"/>
+                                        <constraint firstItem="h6O-Za-QSJ" firstAttribute="top" secondItem="WNt-dX-b7a" secondAttribute="top" priority="999" constant="11.5" id="bwg-q3-i6y"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="h6O-Za-QSJ" id="Asw-Im-cu3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
