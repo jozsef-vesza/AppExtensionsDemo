@@ -47,6 +47,16 @@ public struct ShoppingItemStore: ShoppingStoreType {
         saveItems(updated)
     }
     
+    public func addNewItemWithTitle(title: String) {
+        
+        let initial = items()
+        let newItem = ShoppingItem(name: title)
+        
+        let updated = initial + [newItem]
+        
+        saveItems(updated)
+    }
+    
     private func saveItems(items: [ShoppingItem]) {
         
         let boxedItems = items.map { item -> [String : Bool] in

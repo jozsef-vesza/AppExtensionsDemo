@@ -58,7 +58,16 @@ class TodoViewController: UITableViewController {
     // MARK: - Segue management
     
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        tableView.reloadData()
+        
+        guard let unwindSegue = unwindSegue as? AddNewItemUnwindSegue else {
+            return
+        }
+        
+        viewModel.addItemWithTitle(unwindSegue.itemTitle)
+        
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.tableView.reloadData()
+        }
     }
 }
 

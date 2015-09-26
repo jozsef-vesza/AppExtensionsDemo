@@ -12,4 +12,5 @@ public protocol ShoppingStoreType {
     
     func items() -> [ShoppingItem]
     func toggleItem(item: ShoppingItem)
+    func addNewItemWithTitle(title: String)
 }
