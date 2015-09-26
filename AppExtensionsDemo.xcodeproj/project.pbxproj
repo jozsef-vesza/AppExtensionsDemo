@@ -31,6 +31,7 @@
 		BB324C431BB6C5F3002CC64F /* TodoCellDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB324C421BB6C5F3002CC64F /* TodoCellDataType.swift */; settings = {ASSET_TAGS = (); }; };
 		BB324C471BB6C6B6002CC64F /* TodayCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB324C461BB6C6B6002CC64F /* TodayCellData.swift */; settings = {ASSET_TAGS = (); }; };
 		BB324C491BB6C710002CC64F /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB324C481BB6C710002CC64F /* TodayCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BB7E078F1BB6CF3E00C32AE4 /* DataProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */; settings = {ASSET_TAGS = (); }; };
 		BBBEA6081B2C6101007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
 		BBBEA6091B2C610B007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
 		BBBEA60A1B2C6110007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
@@ -162,6 +163,7 @@
 		BB324C421BB6C5F3002CC64F /* TodoCellDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCellDataType.swift; sourceTree = "<group>"; };
 		BB324C461BB6C6B6002CC64F /* TodayCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayCellData.swift; sourceTree = "<group>"; };
 		BB324C481BB6C710002CC64F /* TodayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
+		BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderType.swift; sourceTree = "<group>"; };
 		BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelExtensions.framework; path = Carthage/Build/iOS/ViewModelExtensions.framework; sourceTree = "<group>"; };
 		BBBEA60F1B2C89EC007444FF /* AppExtensionsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppExtensionsDemo.entitlements; sourceTree = "<group>"; };
 		BBBEA6101B2C8A02007444FF /* SegmentedToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SegmentedToday.entitlements; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				0400A1681B2AC8BD00966213 /* TodayViewModelType.swift */,
+				BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				0400A16B1B2ACBBC00966213 /* TodayViewModelType.swift in Sources */,
 				BBCBA3181B2CA83C00744D10 /* ShoppingStoreType.swift in Sources */,
 				0400A15D1B2AC15300966213 /* ShoppingItemStore.swift in Sources */,
+				BB7E078F1BB6CF3E00C32AE4 /* DataProviderType.swift in Sources */,
 				0400A15C1B2AC14F00966213 /* ShoppingItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

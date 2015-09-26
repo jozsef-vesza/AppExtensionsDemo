@@ -9,7 +9,7 @@
 import UIKit
 import TodoKit
 
-struct DoneViewModel: TodoViewModelType {
+struct DoneViewModel: TodoViewModelType, DataProviderType {
     
     let store: ShoppingStoreType
     
@@ -19,22 +19,6 @@ struct DoneViewModel: TodoViewModelType {
     
     init(store: ShoppingStoreType = ShoppingItemStore()) {
         self.store = store
-    }
-    
-    func count() -> Int {
-        return items.count
-    }
-    
-    func titleForRow(row: Int) -> String {
-        return items[row].name
-    }
-    
-    func statusForRow(row: Int) -> Bool {
-        return items[row].status
-    }
-    
-    func toggleStatusForRow(row: Int) {
-        store.toggleItem(items[row])
     }
     
     func dataForRow(row: Int) -> TodoCellDataType {

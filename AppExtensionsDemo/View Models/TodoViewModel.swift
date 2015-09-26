@@ -9,28 +9,16 @@
 import UIKit
 import TodoKit
 
-struct TodoViewModel: TodoViewModelType {
+struct TodoViewModel: TodoViewModelType, DataProviderType {
+    
+    var items: [ShoppingItem] {
+        return store.items()
+    }
     
     let store: ShoppingStoreType
     
     init(store: ShoppingStoreType = ShoppingItemStore()) {
         self.store = store
-    }
-    
-    func count() -> Int {
-        return store.items().count
-    }
-    
-    func titleForRow(row: Int) -> String {
-        return store.items()[row].name
-    }
-    
-    func statusForRow(row: Int) -> Bool {
-        return store.items()[row].status
-    }
-    
-    func toggleStatusForRow(row: Int) {
-        store.toggleItem(store.items()[row])
     }
     
     func dataForRow(row: Int) -> TodoCellDataType {
