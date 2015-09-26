@@ -75,7 +75,7 @@
         <!--New Item View Controller-->
         <scene sceneID="4AY-Yp-ivy">
             <objects>
-                <viewController title="New Item View Controller" id="oa0-c0-bwy" sceneMemberID="viewController">
+                <viewController title="New Item View Controller" id="oa0-c0-bwy" customClass="AddNewItemViewController" customModule="AppExtensionsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iVz-ix-6Uf"/>
                         <viewControllerLayoutGuide type="bottom" id="oZl-jN-rYO"/>
@@ -93,25 +93,35 @@
                                     <navigationItem title="Add New Item" id="ZNa-5q-GNa">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Lg8-Qa-74d">
                                             <connections>
-                                                <segue destination="vEY-9a-y8Q" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="CE5-ON-373"/>
+                                                <segue destination="vEY-9a-y8Q" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="ATa-j2-orP"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="TGK-5h-nIh">
                                             <connections>
-                                                <segue destination="vEY-9a-y8Q" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="38a-1E-1S9"/>
+                                                <segue destination="vEY-9a-y8Q" kind="unwind" customClass="AddNewItemUnwindSegue" customModule="AppExtensionsDemo" customModuleProvider="target" unwindAction="unwindForSegue:towardsViewController:" id="RD1-Y3-RFK"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVy-Ho-5GU">
+                                <rect key="frame" x="235.5" y="84" width="129" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ntW-QT-lVt" firstAttribute="top" secondItem="wQh-aC-ySX" secondAttribute="top" id="5DK-W4-Bb9"/>
+                            <constraint firstItem="dVy-Ho-5GU" firstAttribute="top" secondItem="ntW-QT-lVt" secondAttribute="bottom" constant="20" id="Msv-tQ-aA2"/>
                             <constraint firstItem="ntW-QT-lVt" firstAttribute="leading" secondItem="wQh-aC-ySX" secondAttribute="leading" id="Oy5-hG-7nC"/>
                             <constraint firstAttribute="trailing" secondItem="ntW-QT-lVt" secondAttribute="trailing" id="jx9-rd-fcp"/>
+                            <constraint firstItem="dVy-Ho-5GU" firstAttribute="centerX" secondItem="wQh-aC-ySX" secondAttribute="centerX" id="zkS-ML-V2N"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="itemTextField" destination="dVy-Ho-5GU" id="sq6-He-cf0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfc-27-HS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vEY-9a-y8Q" userLabel="Exit" sceneMemberID="exit"/>
