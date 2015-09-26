@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
@@ -19,6 +18,9 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HXB-jF-kTN">
                                 <rect key="frame" x="8" y="8" width="304" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="NSd-eI-MKk"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Todo"/>
                                     <segment title="Done"/>
@@ -28,11 +30,8 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MlL-DZ-ONr">
-                                <rect key="frame" x="0.0" y="44" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="161"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="H6j-sD-4Rj"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todayCell" id="AtI-p1-BMw" customClass="TodayCell" customModule="SegmentedToday" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -67,6 +66,9 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw8-KH-7Cp">
                                 <rect key="frame" x="125.5" y="212" width="69" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UEl-8G-YAh"/>
+                                </constraints>
                                 <state key="normal" title="Open App">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -94,7 +96,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="250"/>
                     <connections>
+                        <outlet property="openButtonHeight" destination="UEl-8G-YAh" id="4l1-2N-REP"/>
                         <outlet property="segmentedControl" destination="HXB-jF-kTN" id="G7K-WE-Fyq"/>
+                        <outlet property="segmentedControlHeight" destination="NSd-eI-MKk" id="p3F-Md-Ilt"/>
                         <outlet property="tableView" destination="MlL-DZ-ONr" id="PiR-IW-6bz"/>
                     </connections>
                 </viewController>

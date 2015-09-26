@@ -12,15 +12,18 @@ import TodoKit
 
 let todayCellId = "todayCell"
 let rowHeight: CGFloat = 44
+let standardPadding: CGFloat = 8
 
 class TodayViewController: UIViewController {
     
+    @IBOutlet weak var openButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var segmentedControlHeight: NSLayoutConstraint!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     
     private var mainViewModel = TodayViewModel() {
         didSet {
-            tableView.reloadData()
+            handleContentChange()
         }
     }
     
@@ -57,6 +60,20 @@ class TodayViewController: UIViewController {
             extensionContext?.openURL(appUrl, completionHandler: nil)
         }
     }
+    
+    // MARK: - Private helpers
+    
+    private func handleContentChange() {
+        
+        let tableViewHeight = CGFloat(subViewModel.count()) * rowHeight
+        
+        let contentHeight = standardPadding + segmentedControlHeight.constant + standardPadding + tableViewHeight + standardPadding + openButtonHeight.constant + standardPadding
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+            self.preferredContentSize.height = contentHeight
+        }
+    }
 }
 
 // MARK: - NCWidgetProviding
@@ -69,6 +86,7 @@ extension TodayViewController: NCWidgetProviding {
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         completionHandler(NCUpdateResult.NewData)
+        handleContentChange()
     }
 }
 
@@ -97,6 +115,6 @@ extension TodayViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         subViewModel.toggleStatusForRow(indexPath.row)
-        tableView.reloadData()
+        handleContentChange()
     }
 }
