@@ -33,7 +33,7 @@ struct TodoViewModel: TodoViewModelType {
         store.toggleItem(store.items()[row])
     }
     
-    func dataForFor(row: Int) -> TodoCellData {
+    func dataForRow(row: Int) -> TodoCellDataType {
         return TodoCellData(title: titleForRow(row), checked: statusForRow(row))
     }
 }

@@ -84,10 +84,9 @@ extension TodayViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(todayCellId, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(todayCellId, forIndexPath: indexPath) as! TodayCell
         
-        cell.textLabel?.text = subViewModel.titleForRow(indexPath.row)
-        cell.textLabel?.textColor = UIColor.lightTextColor()
+        cell.todoItem = subViewModel.dataForRow(indexPath.row)
         
         return cell
     }

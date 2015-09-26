@@ -1,5 +1,5 @@
 //
-//  TodoCell.swift
+//  TodayCell.swift
 //  AppExtensionsDemo
 //
 //  Created by József Vesza on 26/09/15.
@@ -9,7 +9,7 @@
 import UIKit
 import TodoKit
 
-class TodoCell: UITableViewCell {
+class TodayCell: UITableViewCell {
 
     @IBOutlet private weak var titleLabel: UILabel!
     
@@ -21,7 +21,6 @@ class TodoCell: UITableViewCell {
             }
             
             titleLabel.text = todoItem.title
-            accessoryType = todoItem.checked ? .Checkmark : .None
         }
     }
 

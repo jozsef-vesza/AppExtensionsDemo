@@ -43,7 +43,7 @@ class TodoViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(todoReuseId, forIndexPath: indexPath) as! TodoCell
-        cell.todoItem = viewModel.dataForFor(indexPath.row)
+        cell.todoItem = viewModel.dataForRow(indexPath.row)
         
         return cell
     }

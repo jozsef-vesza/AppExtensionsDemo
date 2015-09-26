@@ -36,4 +36,8 @@ struct NotDoneViewModel: TodoViewModelType {
     func toggleStatusForRow(row: Int) {
         store.toggleItem(items[row])
     }
+    
+    func dataForRow(row: Int) -> TodoCellDataType {
+        return TodayCellData(title: titleForRow(row), checked: statusForRow(row))
+    }
 }

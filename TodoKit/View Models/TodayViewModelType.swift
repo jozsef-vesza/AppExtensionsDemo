@@ -12,10 +12,6 @@ import ViewModelExtensions
 public protocol TodoViewModelType: ViewModelType {
     
     func count() -> Int
-    
-    func titleForRow(row: Int) -> String
-    
-    func statusForRow(row: Int) -> Bool
-    
     func toggleStatusForRow(row: Int)
+    func dataForRow(row: Int) -> TodoCellDataType
 }

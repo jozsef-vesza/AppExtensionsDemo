@@ -1,5 +1,5 @@
 //
-//  TodoCellData.swift
+//  TodayCellData.swift
 //  AppExtensionsDemo
 //
 //  Created by József Vesza on 26/09/15.
@@ -9,7 +9,7 @@
 import Foundation
 import TodoKit
 
-struct TodoCellData: TodoCellDataType {
+struct TodayCellData: TodoCellDataType {
     let title: String
     let checked: Bool
 }
