@@ -60,6 +60,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="7zd-sB-ime"/>
+                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="GfS-Mc-Gjs"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw8-KH-7Cp">
                                 <rect key="frame" x="125.5" y="212" width="69" height="30"/>
