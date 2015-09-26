@@ -54,6 +54,12 @@ class TodoViewController: UITableViewController {
         viewModel.toggleStatusForRow(indexPath.row)
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
     }
+    
+    // MARK: - Segue management
+    
+    @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        tableView.reloadData()
+    }
 }
 
 // Mark: - View controller initialization extension
