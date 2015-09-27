@@ -11,6 +11,7 @@ import NotificationCenter
 import TodoKit
 
 let todayCellId = "todayCell"
+let appUrl = "appExtensionsDemo://"
 let rowHeight: CGFloat = 44
 let standardPadding: CGFloat = 8
 
@@ -56,7 +57,7 @@ class TodayViewController: UIViewController {
     
     @IBAction private func goToAppButtonPressed(sender: UIButton) {
         
-        if let appUrl = NSURL(string: "appExtensionsDemo://") {
+        if let appUrl = NSURL(string: appUrl) {
             extensionContext?.openURL(appUrl, completionHandler: nil)
         }
     }
