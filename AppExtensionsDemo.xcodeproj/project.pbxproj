@@ -175,9 +175,11 @@
 		BB473E8F1BB84F4A00DC309B /* TodoWatchRowData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoWatchRowData.swift; sourceTree = "<group>"; };
 		BB473E921BB84F9300DC309B /* TodoItemsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemsViewModel.swift; sourceTree = "<group>"; };
 		BB473E981BB850DC00DC309B /* TodoItemsRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemsRowController.swift; sourceTree = "<group>"; };
+		BB473E9A1BB8939A00DC309B /* TodoWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TodoWatch Extension.entitlements"; sourceTree = "<group>"; };
 		BB512A2E1BB731AF0091CD51 /* AddNewItemUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemUnwindSegue.swift; sourceTree = "<group>"; };
 		BB512A301BB732190091CD51 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
 		BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderType.swift; sourceTree = "<group>"; };
+		BB8819831BB896560029941C /* TodoWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodoWatch.entitlements; sourceTree = "<group>"; };
 		BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelExtensions.framework; path = Carthage/Build/iOS/ViewModelExtensions.framework; sourceTree = "<group>"; };
 		BBBEA60F1B2C89EC007444FF /* AppExtensionsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppExtensionsDemo.entitlements; sourceTree = "<group>"; };
 		BBBEA6101B2C8A02007444FF /* SegmentedToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SegmentedToday.entitlements; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 		BBF8363D1BB84F1800D70891 /* TodoWatch */ = {
 			isa = PBXGroup;
 			children = (
+				BB8819831BB896560029941C /* TodoWatch.entitlements */,
 				BBF8363E1BB84F1800D70891 /* Interface.storyboard */,
 				BBF836411BB84F1800D70891 /* Assets.xcassets */,
 				BBF836431BB84F1800D70891 /* Info.plist */,
@@ -514,6 +517,7 @@
 		BBF8364C1BB84F1900D70891 /* TodoWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BB473E9A1BB8939A00DC309B /* TodoWatch Extension.entitlements */,
 				BB473E971BB8507D00DC309B /* Supporting Files */,
 				BB473E961BB8507300DC309B /* Row Controllers */,
 				BB473E951BB8506F00DC309B /* Interface Controllers */,
@@ -692,9 +696,20 @@
 					BBF8363B1BB84F1800D70891 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 22E8VLPFF8;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					BBF836471BB84F1900D70891 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 22E8VLPFF8;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1216,12 +1231,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = TodoWatch_Extension;
 				INFOPLIST_FILE = TodoWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = hu.jozsefvesza.AppExtensionsDemo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1235,11 +1252,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = TodoWatch_Extension;
 				INFOPLIST_FILE = TodoWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = hu.jozsefvesza.AppExtensionsDemo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;

@@ -15,17 +15,15 @@ class InterfaceController: WKInterfaceController {
 
     @IBOutlet private weak var itemsTable: WKInterfaceTable!
 
-    var viewModel: TodoItemsViewModel!
+    var viewModel = TodoItemsViewModel()
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        updateTable()
     }
 
     override func didDeactivate() {
@@ -33,4 +31,13 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    private func updateTable() {
+
+        itemsTable.setNumberOfRows(viewModel.count(), withRowType: todoItemRowId)
+        
+        for (index, _) in viewModel.items.enumerate() {
+            let rowController = itemsTable.rowControllerAtIndex(index) as! TodoItemsRowController
+            rowController.todoItem = viewModel.dataForRow(index)
+        }
+    }
 }
