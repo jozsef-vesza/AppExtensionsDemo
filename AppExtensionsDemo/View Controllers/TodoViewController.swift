@@ -14,7 +14,7 @@ let defaultRowHeight: CGFloat = 44
 
 class TodoViewController: UITableViewController {
     
-    private(set) var viewModel: TodoViewModel!
+    var viewModel: TodoViewModel!
     
     // MARK: - View lifecycle
     
@@ -68,20 +68,5 @@ class TodoViewController: UITableViewController {
         dispatch_async(dispatch_get_main_queue()) { 
             self.tableView.reloadData()
         }
-    }
-}
-
-// Mark: - View controller initialization extension
-
-extension TodoViewController: ViewControllerInitializable {
-    
-    static func instanceWithViewModel(viewModel: TodoViewModel) -> TodoViewController? {
-        
-        if let instance = self.instance() as? TodoViewController {
-            instance.viewModel = viewModel
-            return instance
-        }
-        
-        return nil
     }
 }

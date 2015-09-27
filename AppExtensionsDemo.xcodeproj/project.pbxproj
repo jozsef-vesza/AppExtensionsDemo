@@ -34,9 +34,6 @@
 		BB512A2F1BB731AF0091CD51 /* AddNewItemUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB512A2E1BB731AF0091CD51 /* AddNewItemUnwindSegue.swift */; settings = {ASSET_TAGS = (); }; };
 		BB512A311BB732190091CD51 /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB512A301BB732190091CD51 /* AddNewItemViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB7E078F1BB6CF3E00C32AE4 /* DataProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */; settings = {ASSET_TAGS = (); }; };
-		BBBEA6081B2C6101007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
-		BBBEA6091B2C610B007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
-		BBBEA60A1B2C6110007444FF /* ViewModelExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */; };
 		BBBEA60E1B2C889B007444FF /* TodoKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0400A13C1B2AC11500966213 /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBCBA3181B2CA83C00744D10 /* ShoppingStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCBA3171B2CA83C00744D10 /* ShoppingStoreType.swift */; };
 /* End PBXBuildFile section */
@@ -146,7 +143,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0400A1281B2AC0E500966213 /* NotificationCenter.framework in Frameworks */,
-				BBBEA6091B2C610B007444FF /* ViewModelExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +150,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBBEA60A1B2C6110007444FF /* ViewModelExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0400A1531B2AC11500966213 /* TodoKit.framework in Frameworks */,
-				BBBEA6081B2C6101007444FF /* ViewModelExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

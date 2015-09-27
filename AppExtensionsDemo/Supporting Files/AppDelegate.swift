@@ -20,7 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }()
     
     lazy var mainViewController: TodoViewController? = {
-        return TodoViewController.instanceWithViewModel(TodoViewModel())
+        
+        let storyboardId = NSStringFromClass(TodoViewController)
+        
+        
+        guard
+            let strippedId = storyboardId.componentsSeparatedByCharactersInSet(NSCharacterSet.punctuationCharacterSet()).last,
+            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(strippedId) as? TodoViewController else {
+            return nil
+        }
+        
+        viewController.viewModel = TodoViewModel()
+        
+        return viewController
         }()
     
     func applicationDidFinishLaunching(application: UIApplication) {
