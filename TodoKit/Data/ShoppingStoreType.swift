@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 József Vesza. All rights reserved.
 //
 
-import UIKit
-
 public protocol ShoppingStoreType {
     
     func items() -> [ShoppingItem]

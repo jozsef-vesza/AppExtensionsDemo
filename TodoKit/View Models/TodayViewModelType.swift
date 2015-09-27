@@ -6,9 +6,7 @@
 //  Copyright (c) 2015 József Vesza. All rights reserved.
 //
 
-import ViewModelExtensions
-
-public protocol TodoViewModelType: ViewModelType {
+public protocol TodoViewModelType {
     
     func count() -> Int
     func toggleStatusForRow(row: Int)

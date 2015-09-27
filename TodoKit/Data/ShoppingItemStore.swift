@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 József Vesza. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 private let appGroupId = "group.hu.jozsefvesza.appextensionsdemo"
 private let savedDataKey = "savedItems"
