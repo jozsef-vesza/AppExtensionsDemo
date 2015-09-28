@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ViewModelExtensions
 
 let todoReuseId = "todoCell"
 let defaultRowHeight: CGFloat = 44

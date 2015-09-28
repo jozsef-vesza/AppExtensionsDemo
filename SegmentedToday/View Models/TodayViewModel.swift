@@ -8,11 +8,10 @@
 
 import UIKit
 import TodoKit
-import ViewModelExtensions
 
 let selectedIndexKey = "selectedIndex"
 
-struct TodayViewModel: ViewModelType {
+struct TodayViewModel {
     
     var selectedIndex: Int = 0 {
         didSet {
