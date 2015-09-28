@@ -8,23 +8,15 @@
 
 import Foundation
 
-private let appGroupId = "group.hu.jozsefvesza.appextensionsdemo"
 private let savedDataKey = "savedItems"
 
-public enum StoreTypes {
-    case UserDefaults
-}
+public class ShoppingItemStore: NSObject, ShoppingStoreType {
 
-public struct ShoppingItemStore: ShoppingStoreType {
+    private let defaults: NSUserDefaults?
     
-    private let defaultItems = [
-        ShoppingItem(name: "Coffee"),
-        ShoppingItem(name: "Banana"),
-    ]
-    
-    private let defaults = NSUserDefaults(suiteName: appGroupId)
-    
-    public init() {}
+    public init(appGroupId: String? = nil) {
+        defaults = NSUserDefaults(suiteName: appGroupId)
+    }
     
     public func items() -> [ShoppingItem] {
         
@@ -32,7 +24,7 @@ public struct ShoppingItemStore: ShoppingStoreType {
             return loaded
         }
         
-        return defaultItems
+        return []
     }
     
     public func toggleItem(item: ShoppingItem) {

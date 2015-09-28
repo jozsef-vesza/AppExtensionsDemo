@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 József Vesza. All rights reserved.
 //
 
-public protocol ShoppingStoreType {
+public protocol ShoppingStoreType: NSObjectProtocol {
     
     func items() -> [ShoppingItem]
     func toggleItem(item: ShoppingItem)

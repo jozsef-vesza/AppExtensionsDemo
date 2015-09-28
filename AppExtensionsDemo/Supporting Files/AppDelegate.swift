@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import TodoKit
 
+private let appGroupId = "group.hu.jozsefvesza.appextensionsdemo"
 let updateDataNotification = "updateData"
 
 @UIApplicationMain
@@ -30,7 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return nil
         }
         
-        viewController.viewModel = TodoViewModel()
+        
+        let dataStore = ShoppingItemStore(appGroupId: appGroupId)
+        let viewModel = TodoViewModel(store: dataStore)
+        viewController.viewModel = viewModel
         
         return viewController
         }()
