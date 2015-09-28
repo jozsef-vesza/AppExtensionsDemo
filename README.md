@@ -4,13 +4,7 @@
 
 ## Introduction 👋
 
-This is an example project for getting familiary with App Extensions, introduced in iOS 8.
-
-Please note that the project is using external dependencies, managed by [Carthage](https://github.com/Carthage/Carthage). In order to complile, you'll have to build them:
-
-````bash
-carthage update
-````
+This project started out as an example for getting familiary with App Extensions, introduced in iOS 8. Now the main goal is to add a working watchOS 2 example.
 
 ## Checklist 👷
 
@@ -19,6 +13,8 @@ carthage update
 - [x] Setting up shared container
 - [x] Two-way data updates
 - [ ] Adding different data stores
+- [X] watchOS target
+- [ ] Share data with watchOS target
 
 ## Discussion 👓
 
@@ -29,6 +25,9 @@ Extensions in iOS cannot exist without a container app. This leads to the follow
 * [AppExtensionsDemo](https://github.com/jozsef-vesza/AppExtensionsDemo/tree/master/AppExtensionsDemo): The main app, and container project.
 * [SegmentedToday](https://github.com/jozsef-vesza/AppExtensionsDemo/tree/master/SegmentedToday): The Today widget.
 * [TodoKit](https://github.com/jozsef-vesza/AppExtensionsDemo/tree/master/TodoKit): An embedded framework for shared code.
+* [TodoWatch Extension](https://github.com/jozsef-vesza/AppExtensionsDemo/tree/master/TodoWatch%20Extension): Contains code for the watch app
+* [TodoWatch](https://github.com/jozsef-vesza/AppExtensionsDemo/tree/master/TodoWatch): The main watch app.
+
 
 ### Creating an extension 🐣
 
@@ -71,6 +70,8 @@ func saveItems(items: [YourModel]) {
 }
 ```
 
+Please note, that this is unavailable for watchOS 2, as the watch code is no longer executed on the phone. Stay tuned for an update!
+
 ### Synchronizing state 😎
 
 This is the tricky part. Now our app, and extension share code and data, but this doesn't mean they are automatically updated.
@@ -82,7 +83,13 @@ My solution was the following:
 Since the extension, and its container don't have direct access to each other, in-memory state management didn't seem like a good idea. So instead of providing accessors, the store exposes method calls, which go _directly_ to `NSUserDefaults`:
 
 ```swift
-public struct ShoppingItemStore: ShoppingStoreType {
+public class ShoppingItemStore: NSObject, ShoppingStoreType {
+    
+    private let defaults: NSUserDefaults?
+    
+    public init(appGroupId: String? = nil) {
+        defaults = NSUserDefaults(suiteName: appGroupId)
+    }
     
     public func items() -> [ShoppingItem] {
         
@@ -90,7 +97,7 @@ public struct ShoppingItemStore: ShoppingStoreType {
             return loaded
         }
         
-        return defaultItems
+        return []
     }
     
     public func toggleItem(item: ShoppingItem) {
