@@ -32,12 +32,5 @@ class InterfaceController: WKInterfaceController {
     }
 
     private func updateTable() {
-
-        itemsTable.setNumberOfRows(viewModel.count(), withRowType: todoItemRowId)
-        
-        for (index, _) in viewModel.items.enumerate() {
-            let rowController = itemsTable.rowControllerAtIndex(index) as! TodoItemsRowController
-            rowController.todoItem = viewModel.dataForRow(index)
-        }
     }
 }
