@@ -25,13 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboardId = NSStringFromClass(TodoViewController)
         
-        
         guard
             let strippedId = storyboardId.componentsSeparatedByCharactersInSet(NSCharacterSet.punctuationCharacterSet()).last,
             let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(strippedId) as? TodoViewController else {
             return nil
         }
-        
         
         let dataStore = ShoppingItemStore(appGroupId: appGroupId)
         let viewModel = TodoViewModel(store: dataStore)

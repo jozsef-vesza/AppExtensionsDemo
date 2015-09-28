@@ -9,6 +9,7 @@
 import UIKit
 import TodoKit
 
+private let appGroupId = "group.hu.jozsefvesza.appextensionsdemo"
 let selectedIndexKey = "selectedIndex"
 
 struct TodayViewModel {
@@ -29,9 +30,9 @@ struct TodayViewModel {
     func viewModelForSegmentIndex(index: Int) -> TodoViewModelType {
         switch index {
         case 0:
-            return NotDoneViewModel()
+            return NotDoneViewModel(store: ShoppingItemStore(appGroupId: appGroupId))
         default:
-            return DoneViewModel()
+            return DoneViewModel(store: ShoppingItemStore(appGroupId: appGroupId))
         }
     }
     
