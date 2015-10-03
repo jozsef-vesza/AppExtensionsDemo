@@ -182,8 +182,8 @@
 		BB473E9A1BB8939A00DC309B /* TodoWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TodoWatch Extension.entitlements"; sourceTree = "<group>"; };
 		BB512A2E1BB731AF0091CD51 /* AddNewItemUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemUnwindSegue.swift; sourceTree = "<group>"; };
 		BB512A301BB732190091CD51 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
-		BB5322411BBFF098006BC5E4 /* PhoneSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneSessionManager.swift; path = "Session Manager/PhoneSessionManager.swift"; sourceTree = "<group>"; };
-		BB5322431BBFF17D006BC5E4 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchSessionManager.swift; path = "Session Manager/WatchSessionManager.swift"; sourceTree = "<group>"; };
+		BB5322411BBFF098006BC5E4 /* PhoneSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneSessionManager.swift; sourceTree = "<group>"; };
+		BB5322431BBFF17D006BC5E4 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		BB5322481BBFF359006BC5E4 /* SessionManagerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerType.swift; sourceTree = "<group>"; };
 		BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderType.swift; sourceTree = "<group>"; };
 		BB8819831BB896560029941C /* TodoWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodoWatch.entitlements; sourceTree = "<group>"; };
@@ -258,13 +258,13 @@
 		0400A1291B2AC0E500966213 /* SegmentedToday */ = {
 			isa = PBXGroup;
 			children = (
-				BB324C451BB6C679002CC64F /* View */,
-				BB324C441BB6C66F002CC64F /* View Data */,
-				BBBEA6101B2C8A02007444FF /* SegmentedToday.entitlements */,
-				0400A15F1B2AC1FA00966213 /* View Models */,
-				0400A1601B2AC1FE00966213 /* View Controllers */,
 				0400A1611B2AC20200966213 /* Storyboards & Nibs */,
 				0400A12A1B2AC0E500966213 /* Supporting Files */,
+				BB324C451BB6C679002CC64F /* View */,
+				0400A1601B2AC1FE00966213 /* View Controllers */,
+				BB324C441BB6C66F002CC64F /* View Data */,
+				0400A15F1B2AC1FA00966213 /* View Models */,
+				BBBEA6101B2C8A02007444FF /* SegmentedToday.entitlements */,
 			);
 			path = SegmentedToday;
 			sourceTree = "<group>";
@@ -280,11 +280,11 @@
 		0400A13D1B2AC11500966213 /* TodoKit */ = {
 			isa = PBXGroup;
 			children = (
-				BB5322401BBFF04C006BC5E4 /* Session Manager */,
-				0400A16A1B2ACBB200966213 /* View Models */,
-				04E1EF5A1B29CF1D0026409C /* Model */,
 				04E1EF5B1B29CF1F0026409C /* Data */,
+				04E1EF5A1B29CF1D0026409C /* Model */,
+				BB5322401BBFF04C006BC5E4 /* Session Manager */,
 				0400A13E1B2AC11500966213 /* Supporting Files */,
+				0400A16A1B2ACBB200966213 /* View Models */,
 			);
 			path = TodoKit;
 			sourceTree = "<group>";
@@ -292,9 +292,9 @@
 		0400A13E1B2AC11500966213 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0400A1401B2AC11500966213 /* TodoKit.h */,
-				0400A13F1B2AC11500966213 /* Info.plist */,
 				BBF836391BB84E9C00D70891 /* Info-watch.plist */,
+				0400A13F1B2AC11500966213 /* Info.plist */,
+				0400A1401B2AC11500966213 /* TodoKit.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -302,8 +302,8 @@
 		0400A15E1B2AC1D400966213 /* Storyboards & Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				04E1EF3C1B29CEB70026409C /* Main.storyboard */,
 				04E1EF411B29CEB70026409C /* LaunchScreen.xib */,
+				04E1EF3C1B29CEB70026409C /* Main.storyboard */,
 			);
 			path = "Storyboards & Nibs";
 			sourceTree = "<group>";
@@ -311,8 +311,8 @@
 		0400A15F1B2AC1FA00966213 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				0400A1621B2AC23600966213 /* NotDoneViewModel.swift */,
 				0400A1661B2AC38B00966213 /* DoneViewModel.swift */,
+				0400A1621B2AC23600966213 /* NotDoneViewModel.swift */,
 				044CA2081B2B1A840024CE31 /* TodayViewModel.swift */,
 			);
 			path = "View Models";
@@ -337,8 +337,8 @@
 		0400A16A1B2ACBB200966213 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				0400A1681B2AC8BD00966213 /* TodayViewModelType.swift */,
 				BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */,
+				0400A1681B2AC8BD00966213 /* TodayViewModelType.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -347,12 +347,12 @@
 			isa = PBXGroup;
 			children = (
 				04E1EF331B29CEB70026409C /* AppExtensionsDemo */,
+				0400A1211B2AC0AF00966213 /* Frameworks */,
+				04E1EF321B29CEB70026409C /* Products */,
 				0400A1291B2AC0E500966213 /* SegmentedToday */,
 				0400A13D1B2AC11500966213 /* TodoKit */,
 				BBF8363D1BB84F1800D70891 /* TodoWatch */,
 				BBF8364C1BB84F1900D70891 /* TodoWatch Extension */,
-				0400A1211B2AC0AF00966213 /* Frameworks */,
-				04E1EF321B29CEB70026409C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -373,13 +373,13 @@
 			isa = PBXGroup;
 			children = (
 				BB512A2D1BB7318D0091CD51 /* Segues */,
-				BB324C3F1BB6B595002CC64F /* View Data */,
-				BBBEA60F1B2C89EC007444FF /* AppExtensionsDemo.entitlements */,
-				BB324C3C1BB6B4AC002CC64F /* Views */,
-				04E1EF591B29CF1A0026409C /* View Models */,
-				04E1EF581B29CF150026409C /* View Controllers */,
 				0400A15E1B2AC1D400966213 /* Storyboards & Nibs */,
 				04E1EF341B29CEB70026409C /* Supporting Files */,
+				04E1EF581B29CF150026409C /* View Controllers */,
+				BB324C3F1BB6B595002CC64F /* View Data */,
+				04E1EF591B29CF1A0026409C /* View Models */,
+				BB324C3C1BB6B4AC002CC64F /* Views */,
+				BBBEA60F1B2C89EC007444FF /* AppExtensionsDemo.entitlements */,
 			);
 			path = AppExtensionsDemo;
 			sourceTree = "<group>";
@@ -397,8 +397,8 @@
 		04E1EF581B29CF150026409C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				04E1EF9B1B29E3E80026409C /* TodoViewController.swift */,
 				BB512A301BB732190091CD51 /* AddNewItemViewController.swift */,
+				04E1EF9B1B29E3E80026409C /* TodoViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -497,8 +497,8 @@
 			isa = PBXGroup;
 			children = (
 				BBF836511BB84F1900D70891 /* Assets.xcassets */,
-				BBF836531BB84F1900D70891 /* Info.plist */,
 				BBF8364F1BB84F1900D70891 /* ExtensionDelegate.swift */,
+				BBF836531BB84F1900D70891 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -515,19 +515,19 @@
 			isa = PBXGroup;
 			children = (
 				BB5322411BBFF098006BC5E4 /* PhoneSessionManager.swift */,
-				BB5322431BBFF17D006BC5E4 /* WatchSessionManager.swift */,
 				BB5322481BBFF359006BC5E4 /* SessionManagerType.swift */,
+				BB5322431BBFF17D006BC5E4 /* WatchSessionManager.swift */,
 			);
-			name = "Session Manager";
+			path = "Session Manager";
 			sourceTree = "<group>";
 		};
 		BBF8363D1BB84F1800D70891 /* TodoWatch */ = {
 			isa = PBXGroup;
 			children = (
-				BB8819831BB896560029941C /* TodoWatch.entitlements */,
-				BBF8363E1BB84F1800D70891 /* Interface.storyboard */,
 				BBF836411BB84F1800D70891 /* Assets.xcassets */,
 				BBF836431BB84F1800D70891 /* Info.plist */,
+				BBF8363E1BB84F1800D70891 /* Interface.storyboard */,
+				BB8819831BB896560029941C /* TodoWatch.entitlements */,
 			);
 			path = TodoWatch;
 			sourceTree = "<group>";
@@ -535,12 +535,12 @@
 		BBF8364C1BB84F1900D70891 /* TodoWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				BB473E9A1BB8939A00DC309B /* TodoWatch Extension.entitlements */,
-				BB473E971BB8507D00DC309B /* Supporting Files */,
-				BB473E961BB8507300DC309B /* Row Controllers */,
 				BB473E951BB8506F00DC309B /* Interface Controllers */,
-				BB473E911BB84F7900DC309B /* View Models */,
+				BB473E961BB8507300DC309B /* Row Controllers */,
+				BB473E971BB8507D00DC309B /* Supporting Files */,
 				BB473E8E1BB84F3400DC309B /* View Data */,
+				BB473E911BB84F7900DC309B /* View Models */,
+				BB473E9A1BB8939A00DC309B /* TodoWatch Extension.entitlements */,
 			);
 			path = "TodoWatch Extension";
 			sourceTree = "<group>";
@@ -926,6 +926,7 @@
 				BBF8363F1BB84F1800D70891 /* Base */,
 			);
 			name = Interface.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
