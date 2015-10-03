@@ -37,6 +37,10 @@
 		BB473E991BB850DC00DC309B /* TodoItemsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB473E981BB850DC00DC309B /* TodoItemsRowController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB512A2F1BB731AF0091CD51 /* AddNewItemUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB512A2E1BB731AF0091CD51 /* AddNewItemUnwindSegue.swift */; settings = {ASSET_TAGS = (); }; };
 		BB512A311BB732190091CD51 /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB512A301BB732190091CD51 /* AddNewItemViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BB5322421BBFF098006BC5E4 /* PhoneSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5322411BBFF098006BC5E4 /* PhoneSessionManager.swift */; settings = {ASSET_TAGS = (); }; };
+		BB5322441BBFF17D006BC5E4 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5322431BBFF17D006BC5E4 /* WatchSessionManager.swift */; settings = {ASSET_TAGS = (); }; };
+		BB5322491BBFF359006BC5E4 /* SessionManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5322481BBFF359006BC5E4 /* SessionManagerType.swift */; settings = {ASSET_TAGS = (); }; };
+		BB53224A1BBFF359006BC5E4 /* SessionManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5322481BBFF359006BC5E4 /* SessionManagerType.swift */; settings = {ASSET_TAGS = (); }; };
 		BB7E078F1BB6CF3E00C32AE4 /* DataProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */; settings = {ASSET_TAGS = (); }; };
 		BBBEA60E1B2C889B007444FF /* TodoKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0400A13C1B2AC11500966213 /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBCBA3181B2CA83C00744D10 /* ShoppingStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCBA3171B2CA83C00744D10 /* ShoppingStoreType.swift */; };
@@ -178,6 +182,9 @@
 		BB473E9A1BB8939A00DC309B /* TodoWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TodoWatch Extension.entitlements"; sourceTree = "<group>"; };
 		BB512A2E1BB731AF0091CD51 /* AddNewItemUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemUnwindSegue.swift; sourceTree = "<group>"; };
 		BB512A301BB732190091CD51 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
+		BB5322411BBFF098006BC5E4 /* PhoneSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneSessionManager.swift; path = "Session Manager/PhoneSessionManager.swift"; sourceTree = "<group>"; };
+		BB5322431BBFF17D006BC5E4 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchSessionManager.swift; path = "Session Manager/WatchSessionManager.swift"; sourceTree = "<group>"; };
+		BB5322481BBFF359006BC5E4 /* SessionManagerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerType.swift; sourceTree = "<group>"; };
 		BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderType.swift; sourceTree = "<group>"; };
 		BB8819831BB896560029941C /* TodoWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodoWatch.entitlements; sourceTree = "<group>"; };
 		BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelExtensions.framework; path = Carthage/Build/iOS/ViewModelExtensions.framework; sourceTree = "<group>"; };
@@ -273,6 +280,7 @@
 		0400A13D1B2AC11500966213 /* TodoKit */ = {
 			isa = PBXGroup;
 			children = (
+				BB5322401BBFF04C006BC5E4 /* Session Manager */,
 				0400A16A1B2ACBB200966213 /* View Models */,
 				04E1EF5A1B29CF1D0026409C /* Model */,
 				04E1EF5B1B29CF1F0026409C /* Data */,
@@ -501,6 +509,16 @@
 				BB512A2E1BB731AF0091CD51 /* AddNewItemUnwindSegue.swift */,
 			);
 			path = Segues;
+			sourceTree = "<group>";
+		};
+		BB5322401BBFF04C006BC5E4 /* Session Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BB5322411BBFF098006BC5E4 /* PhoneSessionManager.swift */,
+				BB5322431BBFF17D006BC5E4 /* WatchSessionManager.swift */,
+				BB5322481BBFF359006BC5E4 /* SessionManagerType.swift */,
+			);
+			name = "Session Manager";
 			sourceTree = "<group>";
 		};
 		BBF8363D1BB84F1800D70891 /* TodoWatch */ = {
@@ -808,10 +826,12 @@
 			files = (
 				BB324C431BB6C5F3002CC64F /* TodoCellDataType.swift in Sources */,
 				0400A16B1B2ACBBC00966213 /* TodayViewModelType.swift in Sources */,
+				BB5322491BBFF359006BC5E4 /* SessionManagerType.swift in Sources */,
 				BBCBA3181B2CA83C00744D10 /* ShoppingStoreType.swift in Sources */,
 				0400A15D1B2AC15300966213 /* ShoppingItemStore.swift in Sources */,
 				BB7E078F1BB6CF3E00C32AE4 /* DataProviderType.swift in Sources */,
 				0400A15C1B2AC14F00966213 /* ShoppingItem.swift in Sources */,
+				BB5322421BBFF098006BC5E4 /* PhoneSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,10 +855,12 @@
 			files = (
 				BBF8362B1BB84E9C00D70891 /* TodoCellDataType.swift in Sources */,
 				BBF8362C1BB84E9C00D70891 /* TodayViewModelType.swift in Sources */,
+				BB53224A1BBFF359006BC5E4 /* SessionManagerType.swift in Sources */,
 				BBF8362D1BB84E9C00D70891 /* ShoppingStoreType.swift in Sources */,
 				BBF8362E1BB84E9C00D70891 /* ShoppingItemStore.swift in Sources */,
 				BBF8362F1BB84E9C00D70891 /* DataProviderType.swift in Sources */,
 				BBF836301BB84E9C00D70891 /* ShoppingItem.swift in Sources */,
+				BB5322441BBFF17D006BC5E4 /* WatchSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

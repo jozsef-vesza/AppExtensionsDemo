@@ -13,9 +13,13 @@ private let savedDataKey = "savedItems"
 public class ShoppingItemStore: NSObject, ShoppingStoreType {
 
     private let defaults: NSUserDefaults?
+    private let sessionManager: SessionManagerType?
     
-    public init(appGroupId: String? = nil) {
+    public init(appGroupId: String? = nil, sessionManager: SessionManagerType? = nil) {
         defaults = NSUserDefaults(suiteName: appGroupId)
+        self.sessionManager = sessionManager
+        super.init()
+        self.sessionManager?.store = self
     }
     
     public func items() -> [ShoppingItem] {
@@ -49,6 +53,19 @@ public class ShoppingItemStore: NSObject, ShoppingStoreType {
         saveItems(updated)
     }
     
+    public func handleApplicationContextPayload(payload: [String : AnyObject]) {
+        
+        print(payload)
+        
+        guard let items = payload["items"] as? [[String : Bool]] else {
+            print("Malformed payload data", "\(payload)")
+            return
+        }
+        
+        defaults?.setValue(items, forKey: savedDataKey)
+        defaults?.synchronize()
+    }
+    
     private func saveItems(items: [ShoppingItem]) {
         
         let boxedItems = items.map { item -> [String : Bool] in
@@ -57,6 +74,14 @@ public class ShoppingItemStore: NSObject, ShoppingStoreType {
         
         defaults?.setValue(boxedItems, forKey: savedDataKey)
         defaults?.synchronize()
+        
+        let items = ["items" : boxedItems]
+        
+        do {
+            try sessionManager?.updateApplicationContext(items)
+        } catch {
+            print("Oops")
+        }
     }
     
     private func loadItems() -> [ShoppingItem]? {

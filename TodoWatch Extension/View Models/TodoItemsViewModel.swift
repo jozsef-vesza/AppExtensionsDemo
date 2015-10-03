@@ -17,7 +17,7 @@ struct TodoItemsViewModel: TodoViewModelType, DataProviderType {
     
     let store: ShoppingStoreType
     
-    init(store: ShoppingStoreType = ShoppingItemStore()) {
+    init(store: ShoppingStoreType = ShoppingItemStore(sessionManager: WatchSessionManager.sharedManager)) {
         self.store = store
     }
     

@@ -31,7 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return nil
         }
         
-        let dataStore = ShoppingItemStore(appGroupId: appGroupId)
+        let sessionManager = PhoneSessionManager.sharedManager
+        sessionManager.startSession()
+        let dataStore = ShoppingItemStore(appGroupId: appGroupId, sessionManager: sessionManager)
         let viewModel = TodoViewModel(store: dataStore)
         viewController.viewModel = viewModel
         

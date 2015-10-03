@@ -7,10 +7,13 @@
 //
 
 import WatchKit
+import TodoKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
+        let sessionManager = WatchSessionManager.sharedManager
+        sessionManager.startSession()
     }
 
     func applicationDidBecomeActive() {
