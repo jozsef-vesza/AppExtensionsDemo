@@ -22,21 +22,20 @@ struct TodayViewModel {
     }
     
     init() {
+        
         if let savedIndex = loadSegmentIndex() {
             selectedIndex = savedIndex
         }
+        
     }
     
     func viewModelForSegmentIndex(index: Int) -> TodoViewModelType {
         
-        let sessionManager = PhoneSessionManager.sharedManager
-        sessionManager.startSession()
-        
         switch index {
         case 0:
-            return NotDoneViewModel(store: ShoppingItemStore(appGroupId: appGroupId, sessionManager: sessionManager))
+            return NotDoneViewModel(store: ShoppingItemStore(appGroupId: appGroupId))
         default:
-            return DoneViewModel(store: ShoppingItemStore(appGroupId: appGroupId, sessionManager: sessionManager))
+            return DoneViewModel(store: ShoppingItemStore(appGroupId: appGroupId))
         }
     }
     

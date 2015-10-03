@@ -30,6 +30,7 @@ public class PhoneSessionManager: NSObject, WCSessionDelegate {
     }
     
     public func startSession() {
+        print("Session Started \(self)")
         session?.delegate = self
         session?.activateSession()
     }
@@ -38,12 +39,20 @@ public class PhoneSessionManager: NSObject, WCSessionDelegate {
 extension PhoneSessionManager: SessionManagerType {
 
     public func updateApplicationContext(applicationContext: [String : AnyObject]) throws {
-        if let session = validSession {
-            do {
-                try session.updateApplicationContext(applicationContext)
-            } catch let error {
-                throw error
-            }
+
+        guard let session = validSession else {
+            
+            print("Session: \(self.session) was invalid\n", "paired: \(self.session?.paired)\n", "watch app installed: \(self.session?.watchAppInstalled)")
+            
+            return
+        }
+        
+        print("Session is valid: \(session), moving on!")
+        
+        do {
+            try session.updateApplicationContext(applicationContext)
+        } catch let error {
+            throw error
         }
     }
 }
