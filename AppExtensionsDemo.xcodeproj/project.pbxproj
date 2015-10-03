@@ -42,6 +42,8 @@
 		BB5322491BBFF359006BC5E4 /* SessionManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5322481BBFF359006BC5E4 /* SessionManagerType.swift */; settings = {ASSET_TAGS = (); }; };
 		BB53224A1BBFF359006BC5E4 /* SessionManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5322481BBFF359006BC5E4 /* SessionManagerType.swift */; settings = {ASSET_TAGS = (); }; };
 		BB7E078F1BB6CF3E00C32AE4 /* DataProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */; settings = {ASSET_TAGS = (); }; };
+		BB96E3A91BC032F4001EAEBC /* TodoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0400A13C1B2AC11500966213 /* TodoKit.framework */; };
+		BB96E3AA1BC032F4001EAEBC /* TodoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0400A13C1B2AC11500966213 /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBBEA60E1B2C889B007444FF /* TodoKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0400A13C1B2AC11500966213 /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBCBA3181B2CA83C00744D10 /* ShoppingStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCBA3171B2CA83C00744D10 /* ShoppingStoreType.swift */; };
 		BBF8362B1BB84E9C00D70891 /* TodoCellDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB324C421BB6C5F3002CC64F /* TodoCellDataType.swift */; settings = {ASSET_TAGS = (); }; };
@@ -69,6 +71,13 @@
 			remoteInfo = SegmentedToday;
 		};
 		0400A1511B2AC11500966213 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E1EF291B29CEB70026409C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0400A13B1B2AC11500966213;
+			remoteInfo = TodoKit;
+		};
+		BB96E3AB1BC032F5001EAEBC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04E1EF291B29CEB70026409C /* Project object */;
 			proxyType = 1;
@@ -110,6 +119,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0400A1541B2AC11500966213 /* TodoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB96E3AD1BC032F5001EAEBC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BB96E3AA1BC032F4001EAEBC /* TodoKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB473E941BB8501600DC309B /* TodoKit.framework in Frameworks */,
+				BB96E3A91BC032F4001EAEBC /* TodoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,10 +689,12 @@
 				BBF836441BB84F1900D70891 /* Sources */,
 				BBF836451BB84F1900D70891 /* Frameworks */,
 				BBF836461BB84F1900D70891 /* Resources */,
+				BB96E3AD1BC032F5001EAEBC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BB96E3AC1BC032F5001EAEBC /* PBXTargetDependency */,
 			);
 			name = "TodoWatch Extension";
 			productName = "TodoWatch Extension";
@@ -710,6 +733,9 @@
 								enabled = 1;
 							};
 						};
+					};
+					BBF836291BB84E9C00D70891 = {
+						DevelopmentTeam = 22E8VLPFF8;
 					};
 					BBF8363B1BB84F1800D70891 = {
 						CreatedOnToolsVersion = 7.0;
@@ -889,6 +915,11 @@
 			target = 0400A13B1B2AC11500966213 /* TodoKit */;
 			targetProxy = 0400A1511B2AC11500966213 /* PBXContainerItemProxy */;
 		};
+		BB96E3AC1BC032F5001EAEBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0400A13B1B2AC11500966213 /* TodoKit */;
+			targetProxy = BB96E3AB1BC032F5001EAEBC /* PBXContainerItemProxy */;
+		};
 		BBF8364B1BB84F1900D70891 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BBF836471BB84F1900D70891 /* TodoWatch Extension */;
@@ -936,8 +967,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SegmentedToday/SegmentedToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -956,8 +987,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SegmentedToday/SegmentedToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SegmentedToday/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -972,7 +1003,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -988,6 +1021,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hu.jozsefvesza.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -998,7 +1032,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1010,6 +1046,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hu.jozsefvesza.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1105,8 +1142,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AppExtensionsDemo/AppExtensionsDemo.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AppExtensionsDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1121,8 +1158,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AppExtensionsDemo/AppExtensionsDemo.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AppExtensionsDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1136,6 +1173,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1151,6 +1190,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hu.jozsefvesza.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TodoKit;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1162,6 +1202,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1173,6 +1215,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hu.jozsefvesza.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TodoKit;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1183,11 +1226,15 @@
 		BBF836581BB84F1900D70891 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "TodoWatch Extension/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.jozsefvesza.AppExtensionsDemo.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1198,10 +1245,14 @@
 		BBF836591BB84F1900D70891 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "TodoWatch Extension/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.jozsefvesza.AppExtensionsDemo.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1213,9 +1264,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = TodoWatch_Extension;
@@ -1234,9 +1285,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer: Jozsef Vesza (HVY3TTJDC2)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = TodoWatch_Extension;
 				INFOPLIST_FILE = TodoWatch/Info.plist;
