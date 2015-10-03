@@ -36,6 +36,11 @@ class InterfaceController: WKInterfaceController {
         updateTable()
     }
     
+    @IBAction func onClearDoneItems() {
+        viewModel.clearAllDone()
+        updateTable()
+    }
+    
     private func updateTable() {
         
         itemsTable.setNumberOfRows(viewModel.count(), withRowType: todoItemRowId)

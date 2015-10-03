@@ -14,6 +14,7 @@ public protocol TodoViewModelType {
     func statusForRow(row: Int) -> Bool
     func dataForRow(row: Int) -> TodoCellDataType
     func addItemWithTitle(title: String)
+    func clearAllDone()
 }
 
 public extension TodoViewModelType where Self: DataProviderType {
@@ -36,5 +37,9 @@ public extension TodoViewModelType where Self: DataProviderType {
     
     func addItemWithTitle(title: String) {
         store.addNewItemWithTitle(title)
+    }
+    
+    func clearAllDone() {
+        store.clearAllDone()
     }
 }

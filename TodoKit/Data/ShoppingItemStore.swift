@@ -69,6 +69,11 @@ public class ShoppingItemStore: NSObject, ShoppingStoreType {
         NSNotificationCenter.defaultCenter().postNotificationName(updateDataNotification, object: nil)
     }
     
+    public func clearAllDone() {
+        let todoItems = items().filter { $0.status == false }
+        saveItems(todoItems)
+    }
+    
     private func saveItems(items: [ShoppingItem]) {
         
         let boxedItems = items.map { item -> [String : Bool] in

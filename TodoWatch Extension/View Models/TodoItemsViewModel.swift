@@ -12,7 +12,7 @@ import TodoKit
 struct TodoItemsViewModel: TodoViewModelType, DataProviderType {
     
     var items: [ShoppingItem] {
-        return store.items().filter { $0.status == false }
+        return store.items()
     }
     
     let store: ShoppingStoreType

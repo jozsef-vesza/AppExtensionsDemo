@@ -54,6 +54,16 @@ class TodoViewController: UITableViewController {
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
     }
     
+    // MARK: - User interaction
+    
+    @IBAction func clearDoneItems() {
+        viewModel.clearAllDone()
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Segue management
     
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Clh-ze-31H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Clh-ze-31H">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
@@ -12,6 +11,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pvM-NC-bzX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4w-Fg-agX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,22 +25,25 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9ug-ZF-6Aj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="todoCell" id="Ka5-HW-n0P" customClass="TodoCell" customModule="AppExtensionsDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ka5-HW-n0P" id="WNt-dX-b7a">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6O-Za-QSJ">
-                                            <rect key="frame" x="20" y="11.5" width="42" height="20.5"/>
+                                            <rect key="frame" x="20" y="12" width="42" height="20"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="h6O-Za-QSJ" firstAttribute="centerY" secondItem="WNt-dX-b7a" secondAttribute="centerY" id="7HZ-Oi-Gej"/>
                                         <constraint firstItem="h6O-Za-QSJ" firstAttribute="leading" secondItem="WNt-dX-b7a" secondAttribute="leading" constant="20" id="JCI-jU-hmc"/>
@@ -48,6 +51,7 @@
                                         <constraint firstItem="h6O-Za-QSJ" firstAttribute="top" secondItem="WNt-dX-b7a" secondAttribute="top" priority="999" constant="11.5" id="bwg-q3-i6y"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="titleLabel" destination="h6O-Za-QSJ" id="Asw-Im-cu3"/>
                                 </connections>
@@ -60,12 +64,18 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Items" id="VFv-RT-ARt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="vkF-Ld-3Ab">
+                            <connections>
+                                <action selector="clearDoneItems" destination="gA6-89-Iq9" id="JC3-zA-Jmk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6XW-5e-Sa8">
                             <connections>
                                 <segue destination="oa0-c0-bwy" kind="presentation" id="XNl-UP-2kw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42F-Rl-aKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,6 +96,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntW-QT-lVt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="cOd-FN-tr8"/>
                                 </constraints>
@@ -105,11 +116,13 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVy-Ho-5GU">
-                                <rect key="frame" x="235.5" y="84" width="129" height="30"/>
+                                <rect key="frame" x="236" y="84" width="129" height="30"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ntW-QT-lVt" firstAttribute="top" secondItem="wQh-aC-ySX" secondAttribute="top" id="5DK-W4-Bb9"/>

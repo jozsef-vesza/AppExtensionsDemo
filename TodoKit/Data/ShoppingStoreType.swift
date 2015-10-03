@@ -12,4 +12,5 @@ public protocol ShoppingStoreType: NSObjectProtocol {
     func toggleItem(item: ShoppingItem)
     func addNewItemWithTitle(title: String)
     func handleApplicationContextPayload(payload:[String: AnyObject])
+    func clearAllDone()
 }
