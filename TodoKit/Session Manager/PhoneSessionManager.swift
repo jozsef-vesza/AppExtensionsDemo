@@ -56,3 +56,18 @@ extension PhoneSessionManager: SessionManagerType {
         }
     }
 }
+
+public extension PhoneSessionManager {
+    
+    public func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        
+        print("Did receive payload: \(applicationContext)")
+        
+        guard let store = store else {
+            print("No Store")
+            return
+        }
+        
+        store.handleApplicationContextPayload(applicationContext)
+    }
+}

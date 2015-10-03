@@ -45,6 +45,14 @@ public extension WatchSessionManager {
 extension WatchSessionManager {
     
     public func updateApplicationContext(applicationContext: [String : AnyObject]) throws {
-        print("nope")
+        
+        print("Sending payload from watch!")
+        
+        do {
+            try session.updateApplicationContext(applicationContext)
+        } catch let error {
+            throw error
+        }
+        
     }
 }

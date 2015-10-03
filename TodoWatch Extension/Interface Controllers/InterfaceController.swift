@@ -25,13 +25,18 @@ class InterfaceController: WKInterfaceController {
         super.willActivate()
         updateTable()
     }
-
+    
+    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+        viewModel.toggleStatusForRow(rowIndex)
+        updateTable()
+    }
+    
     private func updateTable() {
         
         itemsTable.setNumberOfRows(viewModel.count(), withRowType: todoItemRowId)
         
         for (index, _) in viewModel.items.enumerate() {
-        
+            
             let controller = itemsTable.rowControllerAtIndex(index) as! TodoItemsRowController
             controller.todoItem = viewModel.dataForRow(index)
         }
