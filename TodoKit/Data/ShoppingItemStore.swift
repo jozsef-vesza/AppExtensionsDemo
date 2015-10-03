@@ -9,6 +9,7 @@
 import Foundation
 
 private let savedDataKey = "savedItems"
+let updateDataNotification = "updateData"
 
 public class ShoppingItemStore: NSObject, ShoppingStoreType {
 
@@ -64,6 +65,8 @@ public class ShoppingItemStore: NSObject, ShoppingStoreType {
         
         defaults?.setValue(items, forKey: savedDataKey)
         defaults?.synchronize()
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(updateDataNotification, object: nil)
     }
     
     private func saveItems(items: [ShoppingItem]) {

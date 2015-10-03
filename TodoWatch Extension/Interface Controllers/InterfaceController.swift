@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 
 let todoItemRowId = "TodoItemRow"
+let updateDataNotification = "updateData"
 
 class InterfaceController: WKInterfaceController {
 
@@ -24,6 +25,10 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
         updateTable()
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(updateDataNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (_) -> Void in
+            self.updateTable()
+        }
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
