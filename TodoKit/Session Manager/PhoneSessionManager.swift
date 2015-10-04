@@ -9,9 +9,12 @@
 import UIKit
 import WatchConnectivity
 
+/// WatchConnectivity session manager for the iPhone app.
 public class PhoneSessionManager: NSObject, WCSessionDelegate {
 
+    /// Access to the shared instance.
     public static let sharedManager = PhoneSessionManager()
+    /// The store that the session manager should interact with.
     public weak var store: ShoppingStoreType?
     
     private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
@@ -28,16 +31,16 @@ public class PhoneSessionManager: NSObject, WCSessionDelegate {
     private override init() {
         super.init()
     }
-    
+}
+
+extension PhoneSessionManager: SessionManagerType {
+
     public func startSession() {
         print("Session Started \(self)")
         session?.delegate = self
         session?.activateSession()
     }
-}
-
-extension PhoneSessionManager: SessionManagerType {
-
+    
     public func updateApplicationContext(applicationContext: [String : AnyObject]) throws {
 
         guard let session = validSession else {
@@ -56,6 +59,8 @@ extension PhoneSessionManager: SessionManagerType {
         }
     }
 }
+
+/// MARK: - WCSessionDelegate conformance.
 
 public extension PhoneSessionManager {
     

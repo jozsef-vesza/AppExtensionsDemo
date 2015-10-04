@@ -9,9 +9,12 @@
 import WatchKit
 import WatchConnectivity
 
-public class WatchSessionManager: NSObject, WCSessionDelegate, SessionManagerType {
+/// WatchConnectivity session manager for the watchOS app.
+public class WatchSessionManager: NSObject, WCSessionDelegate {
     
+    /// Access to the shared instance.
     public static let sharedManager = WatchSessionManager()
+    /// The store that the session manager should interact with.
     public weak var store: ShoppingStoreType?
     
     private override init() {
@@ -19,13 +22,31 @@ public class WatchSessionManager: NSObject, WCSessionDelegate, SessionManagerTyp
     }
     
     private let session: WCSession = WCSession.defaultSession()
+}
+
+// MARK: - SessionManagerType confomance
+
+extension WatchSessionManager: SessionManagerType {
     
     public func startSession() {
         session.delegate = self
         session.activateSession()
     }
-
+    
+    public func updateApplicationContext(applicationContext: [String : AnyObject]) throws {
+        
+        print("Sending payload from watch!")
+        
+        do {
+            try session.updateApplicationContext(applicationContext)
+        } catch let error {
+            throw error
+        }
+        
+    }
 }
+
+/// MARK: - WCSessionDelegate conformance.
 
 public extension WatchSessionManager {
     
@@ -42,17 +63,3 @@ public extension WatchSessionManager {
     }
 }
 
-extension WatchSessionManager {
-    
-    public func updateApplicationContext(applicationContext: [String : AnyObject]) throws {
-        
-        print("Sending payload from watch!")
-        
-        do {
-            try session.updateApplicationContext(applicationContext)
-        } catch let error {
-            throw error
-        }
-        
-    }
-}

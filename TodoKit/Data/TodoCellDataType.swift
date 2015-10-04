@@ -8,7 +8,10 @@
 
 import Foundation
 
+/// Protocol description for view data instances, which populate Todo table cells.
 public protocol TodoCellDataType {
+    /// The title of the item to display.
     var title: String { get }
+    /// The checked status of the item to display.
     var checked: Bool { get }
 }

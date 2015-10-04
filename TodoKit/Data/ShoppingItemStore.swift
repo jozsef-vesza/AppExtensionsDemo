@@ -8,20 +8,33 @@
 
 import Foundation
 
+/// Key to use when saving the data to `NSUSerDefaults`.
 private let savedDataKey = "savedItems"
+/// Notification to send when the host app needs to update its data.
 let updateDataNotification = "updateData"
 
+/// Default implementation of `ShoppingStoreType`, which interacts with `NSUserDefaults`.
 public class ShoppingItemStore: NSObject, ShoppingStoreType {
 
+    // MARK: - Properties and initialization
+    
     private let defaults: NSUserDefaults?
     private let sessionManager: SessionManagerType?
     
+    ///
+    /// Initialize a `ShoppingItemStore` instance with a given app group identifier, and connectivity session manager.
+    ///
+    /// - parameter appGroupId: The app group identifier to use for shared sandbox (defaults to `nil`).
+    /// - parameter sessionManager: A connectivity session manager instance to use for handling application context payloads (defaults to `nil`)
+    ///
     public init(appGroupId: String? = nil, sessionManager: SessionManagerType? = nil) {
         defaults = NSUserDefaults(suiteName: appGroupId)
         self.sessionManager = sessionManager
         super.init()
         self.sessionManager?.store = self
     }
+    
+    // MARK: - ShoppingStoreType methods
     
     public func items() -> [ShoppingItem] {
         
@@ -73,6 +86,8 @@ public class ShoppingItemStore: NSObject, ShoppingStoreType {
         let todoItems = items().filter { $0.status == false }
         saveItems(todoItems)
     }
+    
+    // MARK: - Private helper methods
     
     private func saveItems(items: [ShoppingItem]) {
         
