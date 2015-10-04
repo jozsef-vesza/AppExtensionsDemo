@@ -7,7 +7,10 @@ This project contains example code for the following topics:
 
 The documentation is available on [this wiki page](https://github.com/jozsef-vesza/AppExtensionsDemo/wiki).
 
-Today Extension ğŸ“…í³…
+Today Extension ğŸ“…
+
 ![](http://i.imgur.com/gjVisNP.gif) 
+
 watchOS app âŒšï¸
+
 ![](http://i.imgur.com/bN7hoRN.gif) 
