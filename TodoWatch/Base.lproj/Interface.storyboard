@@ -15,7 +15,7 @@
                                 <tableRow identifier="TodoItemRow" id="fBf-8y-iUZ" customClass="TodoItemsRowController" customModule="TodoWatch_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="kwP-JL-FNg">
                                         <items>
-                                            <label alignment="center" verticalAlignment="center" text="Label" id="2hY-lN-oG6">
+                                            <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="0" id="2hY-lN-oG6">
                                                 <fontDescription key="font" type="system" pointSize="16"/>
                                             </label>
                                         </items>
