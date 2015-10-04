@@ -1,12 +1,12 @@
 # AppExtensionsDemo
 
-##Today extension
+##Today extension 📅
 
 This demo includes a Today extension, which shares code with the main app via iOS 8 frameworks. Both apps are configured to use a shared sandbox with app groups.
 
 ![](http://i.imgur.com/gjVisNP.gif) 
 
-##Apple Watch
+##Apple Watch ⌚️
 
 Additionally, there is a watchOS 2 app within the project. It uses the WatchConnectivity framework to send application context data to the main app, and vice versa.
 
