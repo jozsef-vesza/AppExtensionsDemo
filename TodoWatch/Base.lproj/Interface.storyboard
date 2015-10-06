@@ -43,5 +43,25 @@
                 </controller>
             </objects>
         </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="D7E-4z-2t0">
+            <objects>
+                <glanceController hidesWhenLoading="NO" topTemplateType="body1Large" id="Jaq-1N-hfL" customClass="GlanceInterfaceController" customModule="TodoWatch_Extension">
+                    <items>
+                        <label alignment="left" text="Todo Items" id="rYz-ai-JuJ"/>
+                        <label alignment="left" text="4/7" id="dKn-9P-HIV"/>
+                        <group alignment="left" id="J4R-s3-9vV">
+                            <items>
+                                <imageView width="1" height="1" alignment="left" id="zeq-zn-yPZ"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="countLabel" destination="dKn-9P-HIV" id="4iy-ew-PKd"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="363" y="788"/>
+        </scene>
     </scenes>
 </document>

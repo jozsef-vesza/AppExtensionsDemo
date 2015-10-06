@@ -43,6 +43,8 @@
 		BB96E3C31BC03AC6001EAEBC /* TodoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0400A13C1B2AC11500966213 /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BB96E3C71BC03AE6001EAEBC /* TodoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF836381BB84E9C00D70891 /* TodoKit.framework */; };
 		BB96E3C81BC03AE6001EAEBC /* TodoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBF836381BB84E9C00D70891 /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BB9FE9C61BC4821900B01622 /* GlanceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9FE9C51BC4821900B01622 /* GlanceInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
+		BB9FE9C81BC4831E00B01622 /* GlanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9FE9C71BC4831E00B01622 /* GlanceViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		BBBEA60E1B2C889B007444FF /* TodoKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0400A13C1B2AC11500966213 /* TodoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBCBA3181B2CA83C00744D10 /* ShoppingStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCBA3171B2CA83C00744D10 /* ShoppingStoreType.swift */; };
 		BBF8362B1BB84E9C00D70891 /* TodoCellDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB324C421BB6C5F3002CC64F /* TodoCellDataType.swift */; settings = {ASSET_TAGS = (); }; };
@@ -206,6 +208,8 @@
 		BB5322481BBFF359006BC5E4 /* SessionManagerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerType.swift; sourceTree = "<group>"; };
 		BB7E078E1BB6CF3E00C32AE4 /* DataProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderType.swift; sourceTree = "<group>"; };
 		BB8819831BB896560029941C /* TodoWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodoWatch.entitlements; sourceTree = "<group>"; };
+		BB9FE9C51BC4821900B01622 /* GlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceInterfaceController.swift; sourceTree = "<group>"; };
+		BB9FE9C71BC4831E00B01622 /* GlanceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceViewModel.swift; sourceTree = "<group>"; };
 		BBBEA6071B2C6101007444FF /* ViewModelExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelExtensions.framework; path = Carthage/Build/iOS/ViewModelExtensions.framework; sourceTree = "<group>"; };
 		BBBEA60F1B2C89EC007444FF /* AppExtensionsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppExtensionsDemo.entitlements; sourceTree = "<group>"; };
 		BBBEA6101B2C8A02007444FF /* SegmentedToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SegmentedToday.entitlements; sourceTree = "<group>"; };
@@ -484,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				BB473E8F1BB84F4A00DC309B /* TodoWatchRowData.swift */,
+				BB9FE9C71BC4831E00B01622 /* GlanceViewModel.swift */,
 			);
 			path = "View Data";
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF8364D1BB84F1900D70891 /* InterfaceController.swift */,
+				BB9FE9C51BC4821900B01622 /* GlanceInterfaceController.swift */,
 			);
 			path = "Interface Controllers";
 			sourceTree = "<group>";
@@ -896,7 +902,9 @@
 				BB473E901BB84F4A00DC309B /* TodoWatchRowData.swift in Sources */,
 				BBF836501BB84F1900D70891 /* ExtensionDelegate.swift in Sources */,
 				BBF8364E1BB84F1900D70891 /* InterfaceController.swift in Sources */,
+				BB9FE9C81BC4831E00B01622 /* GlanceViewModel.swift in Sources */,
 				BB473E931BB84F9300DC309B /* TodoItemsViewModel.swift in Sources */,
+				BB9FE9C61BC4821900B01622 /* GlanceInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
