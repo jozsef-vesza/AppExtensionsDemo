@@ -18,13 +18,11 @@ class GlanceInterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        countLabel.setText(viewModel.titleForStatusLabel)
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        countLabel.setText(viewModel.titleForStatusLabel)
     }
 
     override func didDeactivate() {

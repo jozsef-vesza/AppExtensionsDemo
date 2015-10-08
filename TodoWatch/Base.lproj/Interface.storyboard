@@ -46,7 +46,7 @@
         <!--Glance Interface Controller-->
         <scene sceneID="D7E-4z-2t0">
             <objects>
-                <glanceController hidesWhenLoading="NO" topTemplateType="body1Large" id="Jaq-1N-hfL" customClass="GlanceInterfaceController" customModule="TodoWatch_Extension">
+                <glanceController topTemplateType="body1Large" id="Jaq-1N-hfL" customClass="GlanceInterfaceController" customModule="TodoWatch_Extension">
                     <items>
                         <label alignment="left" text="Todo Items" id="rYz-ai-JuJ"/>
                         <label alignment="left" text="4/7" id="dKn-9P-HIV"/>
